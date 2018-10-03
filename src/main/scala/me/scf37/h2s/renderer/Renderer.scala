@@ -1,41 +1,53 @@
 package me.scf37.h2s.renderer
 
+import me.scf37.h2s.util.Util
+
 case class Ctx(bits: Vector[String])
 
-class TextScalaRenderer(hl: Highlighter = new TextHighlighter, identLength: Int = 2) {
+class Renderer(hl: Highlighter = new TextHighlighter, identLength: Int = 2) {
+  private val leftParen = hl.punctuation("(")
+  private val rightParen = hl.punctuation(")")
+  private val comma = hl.punctuation(",")
+  private val idents: Array[String] = (0 to 10)
+    .map(len => new String(Array.fill(len * identLength)(' '))).toArray
 
   def render(nodes: Seq[ScalatagsNode]): String = {
-    val sb = new StringBuilder
+    val sb = new StringBuilder(1024)
 
     if (nodes.length == 1) {
       sb ++= doRender(nodes.head, 0)
     } else {
-      sb ++= hl.function("Seq") + hl.punctuation("(")
-      sb ++= renderSequence(nodes, 0, false)
+      sb ++= hl.function("Seq") + leftParen
+      renderSequence(nodes, 0, false, sb)
     }
     sb.toString()
   }
 
-  def makeIdent(ident: Int): String = new String(Array.fill(ident * identLength)(' '))
+  def makeIdent(ident: Int): String = {
+    if (ident < idents.length)
+      idents(ident)
+    else
+      new String(Array.fill(ident * identLength)(' '))
+  }
 
   private def doRender(node: ScalatagsNode, ident: Int): String = node match {
     case ScalatagsComment(comment) =>
       val s = if (comment.contains("\n"))
-        hl.comment("/*" + comment.replace("*/", "*\\u002F") + "*/")
+        hl.comment("/*" + Util.replace(comment, "*/", "*\\u002F") + "*/")
       else
         hl.comment("//" + escapeScalaString(comment))
 
       s
 
     case ScalatagsTag(name, attributes, data, supported) =>
-      val sb = new StringBuilder
+      val sb = new StringBuilder(256)
 
       sb ++= renderTagName(name, supported)
-      sb ++= hl.punctuation("(")
+      sb ++= leftParen
 
-      sb ++= attributes.map(renderAttribute).mkString(hl.punctuation(",") + " ")
+      sb ++= attributes.map(renderAttribute).mkString(comma + " ")
 
-      sb ++= renderSequence(data, ident, attributes.nonEmpty)
+      renderSequence(data, ident, attributes.nonEmpty, sb)
 
       sb.toString()
 
@@ -46,8 +58,7 @@ class TextScalaRenderer(hl: Highlighter = new TextHighlighter, identLength: Int 
         hl.text("\"" + escapeScalaString(name) + "\"")
   }
 
-  private def renderSequence(data: Seq[ScalatagsNode], ident: Int, needComma0: Boolean): String = {
-    val sb = new StringBuilder
+  private def renderSequence(data: Seq[ScalatagsNode], ident: Int, needComma0: Boolean, sb: StringBuilder): Unit = {
 
     var needComma = needComma0
     var needEol = false
@@ -59,16 +70,18 @@ class TextScalaRenderer(hl: Highlighter = new TextHighlighter, identLength: Int 
         return
       }
       if (needComma) {
-        sb ++= hl.punctuation(",") + " "
+        sb ++= comma
+        sb += ' '
       }
       sb ++= s
       needComma = true
     }
     def appendOnNewLine(s: String, comma: Boolean, ident: Int, mustEol: Boolean): Unit = {
       if (needComma) {
-        sb ++= hl.punctuation(",") + " "
+        sb ++= this.comma
+        sb += ' '
       }
-      sb ++= "\n"
+      sb += '\n'
       sb ++= makeIdent(ident)
       sb ++= s
       needComma = comma
@@ -76,7 +89,8 @@ class TextScalaRenderer(hl: Highlighter = new TextHighlighter, identLength: Int 
     }
 
     var hasNestedTags = false
-    for (i <- data.indices) {
+    var i = 0
+    while (i < data.length) {
       val node = data(i)
 
       node match {
@@ -90,26 +104,27 @@ class TextScalaRenderer(hl: Highlighter = new TextHighlighter, identLength: Int 
           appendOnNewLine(doRender(n, ident + 1), comma = true, ident = ident + 1, mustEol = false)
           hasNestedTags = true
       }
+      i += 1
     }
 
     needComma = false
     if (hasNestedTags)
-      appendOnNewLine(hl.punctuation(")"), comma = true, ident = ident, mustEol = false)
+      appendOnNewLine(rightParen, comma = true, ident = ident, mustEol = false)
     else
-      appendOnSameLine(hl.punctuation(")"), ident)
+      appendOnSameLine(rightParen, ident)
 
     sb.toString()
   }
 
   private def renderAttribute(attr: ScalatagsAttribute): String = {
     val name = if (attr.dataAttribute) {
-      hl.function("data") + hl.punctuation("(") +
-        hl.value("\"" + attr.name + "\"") + hl.punctuation(")")
+      hl.function("data") + leftParen +
+        hl.value("\"" + attr.name + "\"") + rightParen
     } else if (attr.supported) {
       hl.attr(attr.name)
     } else {
-      hl.function("attr") + hl.punctuation("(") +
-      hl.value("\"" + escapeScalaString(attr.name) + "\"") + hl.punctuation(")")
+      hl.function("attr") + leftParen +
+      hl.value("\"" + escapeScalaString(attr.name) + "\"") + rightParen
     }
     attr.value match {
       case None => name
@@ -121,11 +136,13 @@ class TextScalaRenderer(hl: Highlighter = new TextHighlighter, identLength: Int 
     if (supported) {
       hl.tag(name)
     } else {
-      hl.function("tag") + hl.punctuation("(") +
-      hl.value("\"" + escapeScalaString(name) + "\"") + hl.punctuation(")")
+      hl.function("tag") + leftParen +
+      hl.value("\"" + escapeScalaString(name) + "\"") + rightParen
     }
   }
 
-  private def escapeScalaString(s: String): String =
-      s.replace("\\", "\\\\").replace("\"", "\\\"")
+  private def escapeScalaString(s: String): String = {
+    val ss = Util.replace(s, "\\", "\\\\")
+    Util.replace(ss, "\"", "\\\"")
+  }
 }

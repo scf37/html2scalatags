@@ -51,7 +51,7 @@ class HtmlHighlighter(
   override def punctuation(s: String): String = span(punctuationStyle, s)
 
   private def span(style: String, value: String): String =
-    s"""<span $style>${escapeHtml(value)}</span>"""
+    s"<span $style>${escapeHtml(value)}</span>"
 
   private def escapeHtml(s: String): String = {
     val out = new StringBuilder(s.length * 3 / 2)

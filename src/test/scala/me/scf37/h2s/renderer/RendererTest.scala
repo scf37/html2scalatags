@@ -7,11 +7,28 @@ import java.util.stream.Collectors
 import me.scf37.h2s.htmlCleaner.Parser
 import org.scalatest.FreeSpec
 
-class TextScalaRendererTest extends FreeSpec {
+class RendererTest extends FreeSpec {
+
+  "perf test " ignore {
+    val p = new Parser
+    val r = new ScalatagsBuilder()
+    val rr = new Renderer()
+
+    val html = read("big.html")
+    val htmlTree = p.parse(html)
+
+    while (true) {
+      val t = System.nanoTime()
+      val out = rr.render(r.build(htmlTree))
+      if (t % 500 == 0) {
+        System.out.println((System.nanoTime() - t) / 1e6)
+      }
+    }
+  }
   "test reference" in {
     val p = new Parser
     val r = new ScalatagsBuilder()
-    val rr = new TextScalaRenderer()
+    val rr = new Renderer()
 
     val html = read("reference.html")
     val expectedOut = read("reference.scala")
@@ -24,7 +41,7 @@ class TextScalaRendererTest extends FreeSpec {
   "test big html" in {
     val p = new Parser
     val r = new ScalatagsBuilder()
-    val rr = new TextScalaRenderer()
+    val rr = new Renderer()
 
     val html = read("big.html")
     val expectedOut = read("big.scala")
@@ -37,7 +54,7 @@ class TextScalaRendererTest extends FreeSpec {
   "test multiroot html" in {
     val p = new Parser
     val r = new ScalatagsBuilder()
-    val rr = new TextScalaRenderer()
+    val rr = new Renderer()
 
     val html =
       """
@@ -65,7 +82,7 @@ class TextScalaRendererTest extends FreeSpec {
       commentStyle = "class=c",
       punctuationStyle = "class=p"
     )
-    val rr = new TextScalaRenderer(hl)
+    val rr = new Renderer(hl)
 
     val html = read("big.html")
     val expectedOut = read("bightml.html")

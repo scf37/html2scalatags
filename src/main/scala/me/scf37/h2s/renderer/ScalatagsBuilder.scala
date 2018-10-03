@@ -4,6 +4,7 @@ import me.scf37.h2s.dom.CommentNode
 import me.scf37.h2s.dom.HtmlNode
 import me.scf37.h2s.dom.TagNode
 import me.scf37.h2s.dom.TextNode
+import me.scf37.h2s.util.Util
 
 
 sealed trait ScalatagsNode
@@ -85,11 +86,7 @@ class ScalatagsBuilder(preserveWhitespace: Boolean = true) {
 
      node match {
        case Some(node) =>
-         if (node.name.toLowerCase == "pre") {
-           result += buildNode(node, ctx.copy(preLevel = ctx.preLevel + 1))
-         } else {
-           result += buildNode(node, ctx)
-         }
+         result += buildNode(node, nextCtx(ctx, node.name))
 
        case None =>
          return result.result()
@@ -101,18 +98,9 @@ class ScalatagsBuilder(preserveWhitespace: Boolean = true) {
 
   private def unescapeHtmlTextIfNeeded(s: String, ctx: RenderContext): String = {
     if (ctx.parentNode != "script" && ctx.parentNode != "style")
-      unescapeHtml(s)
+      Util.unescapeHtml(s)
     else s
   }
-
-  // this one is totally incomplete but works for usual cases
-  private def unescapeHtml(s: String): String =
-    s.replace("&amp;", "&")
-      .replace("&lt;", "<")
-      .replace("&gt;", ">")
-      .replace("&quot;", "\"")
-      .replace("&#x27;", "'")
-      .replace("&#x2F", "/")
 
 
   private def trimForHtml(s: String): String = {
@@ -126,7 +114,7 @@ class ScalatagsBuilder(preserveWhitespace: Boolean = true) {
 
   private def buildNode(node: TagNode, ctx: RenderContext): ScalatagsNode = {
 
-    val attributes: Seq[ScalatagsAttribute] = node.attributes.map { case (name, value) =>
+    val attributes: Vector[ScalatagsAttribute] = node.attributes.map { case (name, value) =>
       if (name.toLowerCase.startsWith("data-"))
         ScalatagsAttribute(
           name = name.dropRight("data-".length),
@@ -161,13 +149,9 @@ class ScalatagsBuilder(preserveWhitespace: Boolean = true) {
             dataAttribute = false
           )
       }
-    }
+    }.toVector
 
-    val ctx2 = ctx.copy(
-      preLevel = if (node.name == "tr") ctx.preLevel + 1 else ctx.preLevel,
-      parentNode = node.name.toLowerCase())
-
-    val nestedNodes = buildNodes(node.children, ctx2)
+    val nestedNodes = buildNodes(node.children, nextCtx(ctx, node.name)).toVector
 
     ScalatagsTag(
       name = node.name,
@@ -176,6 +160,9 @@ class ScalatagsBuilder(preserveWhitespace: Boolean = true) {
       supported = ScalatagsBuilder.knownTags.contains(node.name)
     )
   }
+
+  private def nextCtx(ctx: RenderContext, tagName: String): RenderContext =
+    RenderContext(tagName, if (tagName == "pre") ctx.preLevel + 1 else ctx.preLevel)
 
 }
 
@@ -192,7 +179,6 @@ object ScalatagsBuilder {
     case v => v -> v
   }.toMap
 
-  // "data-xxx" -> data("xxx")
   // value ends with ! -> value is optional
   private val knownAttributes: Map[String, String] = {
     val attrs = Seq(
