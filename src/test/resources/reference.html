@@ -1,0 +1,86 @@
+<body>
+    <!-- empty div -->
+    <div />
+
+    <!-- unknown tag and attribute -->
+    <hello world="forever" />
+
+    <!-- div with no nested elements - must be single-line -->
+    <div class="clazz" data-test="dataattr" aria-label="arialabel" disabled/>
+
+    <!-- case insensitivity -->
+    <Hello WORLD="Forever" > </hello>
+    <Div Class="clazz" Data-Test="DataAttr" Aria-Label="AriaLabel" Disabled/>
+
+    <!-- short text in div -->
+    <div>12</div>
+
+    <!-- long text in div -->
+    <div>here is very very very very long line of text</div>
+
+    <!-- multiline text in div -->
+    <div>
+        line one
+        line two
+        line three
+    </div>
+
+    <!-- multiline
+    comment -->
+    <div>just div</div>
+
+    <!-- some nested tags -->
+    <article>
+        <div>
+            <p>  text1
+                <span>text2
+                  </span>
+            </p>
+        </div>
+    </article>
+
+    <!-- pre tag -->
+    <pre>
+                pre
+                pre
+                <span>
+                  pre pre
+                  pre
+                  <pre>
+                    more
+                    pre
+                  </pre>
+                   pre
+                   again
+                </span>
+                last
+                pre
+              </pre>
+    </body>
+
+    <!-- multiple text and comment nodes -->
+    text a
+    <!-- comment a1 -->
+    <!-- comment a2 -->
+    text b
+    <!-- comment b1 -->
+    <!-- comment b2 -->
+    text c
+    <br />
+
+    <!-- comment inside -->
+    <span><!-- comment --></span>
+
+    <!-- tags w/o spaces -->
+    <span>a</span><span>b</span><span>c</span>
+
+    <!-- spaces in tags -->
+    <span>  a  </span><span>b  </span><span>  c</span>
+
+    <!-- html escapes -->
+    <a href="/hello&world=forever">&lt;john &amp; fedor&gt;</a>
+
+    <!-- html should not be unescaped for script and style tags -->
+    <script>alert("&lt;>") </script>
+    <style>a::after { content: "&lt;>";} </style>
+</body>
