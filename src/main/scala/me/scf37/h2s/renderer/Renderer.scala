@@ -23,7 +23,7 @@ class Renderer(hl: Highlighter = new TextHighlighter, identLength: Int = 2) {
     sb.toString()
   }
 
-  def makeIdent(ident: Int): String = {
+  private def makeIdent(ident: Int): String = {
     if (ident < idents.length)
       idents(ident)
     else

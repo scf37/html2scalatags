@@ -17,13 +17,15 @@ class RendererTest extends FreeSpec {
     val html = read("big.html")
     val htmlTree = p.parse(html)
 
+    var n = 0
     while (true) {
       val t = System.nanoTime()
-      val out = rr.render(r.build(htmlTree))
+      n += rr.render(r.build(htmlTree)).length
       if (t % 500 == 0) {
         System.out.println((System.nanoTime() - t) / 1e6)
       }
     }
+    println(n)
   }
   "test reference" in {
     val p = new Parser
