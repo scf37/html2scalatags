@@ -23,25 +23,25 @@ html(cls := "html__responsive",
     link(rel := "stylesheet", tpe := "text/css", href := "https://cdn.sstatic.net/Sites/stackoverflow/primary-unified.css?v=d98ad55bb7fc"), " ", 
     link(rel := "alternate", tpe := "application/atom+xml", title := "Feed of recent questions", href := "/feeds"), " ", 
     script(
-      """ StackExchange.ready(function () {
+      raw(""" StackExchange.ready(function () {
             StackExchange.realtime.init('wss://qa.sockets.stackexchange.com');
             StackExchange.realtime.subscribeToReputationNotifications('1');
             StackExchange.realtime.subscribeToTopBarNotifications('1');
-        }); """
+        }); """)
     ), " ", 
     script(
-      " StackExchange.init({\"locale\":\"en\",\"serverTime\":1538570736,\"routeName\":\"Home/Index\",\"stackAuthUrl\":\"https://stackauth.com\",\"networkMetaHostname\":\"meta.stackexchange.com\",\"site\":{\"name\":\"Stack Overflow\",\"description\":\"Q&A for professional and enthusiast programmers\",\"isNoticesTabEnabled\":true,\"enableNewTagCreationWarning\":true,\"insertSpaceAfterNameTabCompletion\":false,\"id\":1,\"childUrl\":\"https://meta.stackoverflow.com\",\"enableSocialMediaInSharePopup\":true,\"protocol\":\"https\"},\"user\":{\"fkey\":\"fdad22724c911a3c3e4f2d81e970fd1e3b3e588d3743d6138d82b63a664967fb\",\"tid\":\"ce11c398-6a5c-62bc-40da-776af5208d4a\",\"rep\":1389,\"isRegistered\":true,\"userType\":3,\"userId\":1445898,\"accountId\":1554291,\"gravatar\":\"", 
-      "<div class=\\\"gravatar-wrapper-32\\\">", 
-      "<img src=\\\"https://www.gravatar.com/avatar/3f668122db3fbbe178051b918ca67de3?s=32&amp;d=identicon&amp;r=PG\\\" alt=\\\"\\\" width=\\\"32\\\" height=\\\"32\\\">", 
-      """</div>\",\"profileUrl\":\"https://stackoverflow.com/users/1445898/sergey-alaev\",\"canSeeDeletedPosts\":false},\"realtime\":{\"newest\":false,\"active\":false,\"tagged\":true,\"staleDisconnectIntervalInHours\":0,\"workerIframeDomain\":\"https://cdn.sstatic.net\"},\"events\":{\"postType\":{\"question\":1},\"postEditionSection\":{\"title\":1,\"body\":2,\"tags\":3}},\"story\":{\"minCompleteBodyLength\":75,\"likedTagsMaxLength\":300,\"dislikedTagsMaxLength\":300},\"jobPreferences\":{\"maxNumDeveloperRoles\":2,\"maxNumIndustries\":4},\"svgIconPath\":\"https://cdn.sstatic.net/Img/svg-icons\",\"svgIconHash\":\"0f0fc5e90a6d\"}, {\"site\":{\"allowImageUploads\":true,\"enableUserHovercards\":true,\"styleCode\":true,\"enableImgurHttps\":true,\"forceHttpsImages\":true,\"stacksValidation\":true},\"userMessaging\":{\"showNewFeatureNotice\":true},\"comments\":{},\"userProfile\":{\"openGraphAPIKey\":\"58740831ad23540e00c58987\"},\"tags\":{},\"accounts\":{\"currentPasswordRequiredForChangingStackIdPassword\":true},\"flags\":{\"allowRetractingFlags\":true},\"snippets\":{\"snippetsEnabled\":true,\"renderDomain\":\"stacksnippets.net\"},\"paths\":{},\"markdown\":{\"asteriskIntraWordEmphasis\":true},\"monitoring\":{\"clientTimingsAbsoluteTimeout\":30000,\"clientTimingsDebounceTimeout\":1000},\"mentions\":{\"maxNumUsersInDropdown\":50},\"slack\":{\"sidebarAdDismissCookie\":\"slack-sidebar-ad\"}});
-        StackExchange.using.setCacheBreakers({\"js/prettify-full.en.js\":\"57d4cf5a1522\",\"js/moderator.en.js\":\"c48addfbc3c8\",\"js/full-anon.en.js\":\"f0a76174ffab\",\"js/full.en.js\":\"ecf462a7f947\",\"js/wmd.en.js\":\"6fb738ac6555\",\"js/mobile.en.js\":\"4a1d56e42a88\",\"js/help.en.js\":\"ea9b6d3ca995\",\"js/tageditor.en.js\":\"8fc88803d94e\",\"js/tageditornew.en.js\":\"e986e3658188\",\"js/inline-tag-editing.en.js\":\"8e73ea969326\",\"js/revisions.en.js\":\"be10a4167571\",\"js/review.en.js\":\"aec17442ea99\",\"js/tagsuggestions.en.js\":\"78eee7c19ab2\",\"js/post-validation.en.js\":\"a9cc3be9b7da\",\"js/explore-qlist.en.js\":\"13036a5f10ad\",\"js/events.en.js\":\"90c83f6510ec\",\"js/keyboard-shortcuts.en.js\":\"d069ae64dcff\",\"js/external-editor.en.js\":\"53b91af35f73\",\"js/adops.en.js\":\"22a9bd59b1e9\",\"js/external-editor.en.js\":\"53b91af35f73\",\"js/snippet-javascript.en.js\":\"ab76fd99422a\",\"js/snippet-javascript-codemirror.en.js\":\"1afd891ff5fb\"});
-        StackExchange.using(\"gps\", function() {
+      raw(""" StackExchange.init({"locale":"en","serverTime":1538570736,"routeName":"Home/Index","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"childUrl":"https://meta.stackoverflow.com","enableSocialMediaInSharePopup":true,"protocol":"https"},"user":{"fkey":"fdad22724c911a3c3e4f2d81e970fd1e3b3e588d3743d6138d82b63a664967fb","tid":"ce11c398-6a5c-62bc-40da-776af5208d4a","rep":1389,"isRegistered":true,"userType":3,"userId":1445898,"accountId":1554291,"gravatar":""""), 
+      raw("<div class=\\\"gravatar-wrapper-32\\\">"), 
+      raw("""<img src=\\"https://www.gravatar.com/avatar/3f668122db3fbbe178051b918ca67de3?s=32&amp;d=identicon&amp;r=PG\\" alt=\\"\\" width=\\"32\\" height=\\"32\\">"""), 
+      raw("""</div>","profileUrl":"https://stackoverflow.com/users/1445898/sergey-alaev","canSeeDeletedPosts":false},"realtime":{"newest":false,"active":false,"tagged":true,"staleDisconnectIntervalInHours":0,"workerIframeDomain":"https://cdn.sstatic.net"},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300},"jobPreferences":{"maxNumDeveloperRoles":2,"maxNumIndustries":4},"svgIconPath":"https://cdn.sstatic.net/Img/svg-icons","svgIconHash":"0f0fc5e90a6d"}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableImgurHttps":true,"forceHttpsImages":true,"stacksValidation":true},"userMessaging":{"showNewFeatureNotice":true},"comments":{},"userProfile":{"openGraphAPIKey":"58740831ad23540e00c58987"},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"paths":{},"markdown":{"asteriskIntraWordEmphasis":true},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000},"mentions":{"maxNumUsersInDropdown":50},"slack":{"sidebarAdDismissCookie":"slack-sidebar-ad"}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"57d4cf5a1522","js/moderator.en.js":"c48addfbc3c8","js/full-anon.en.js":"f0a76174ffab","js/full.en.js":"ecf462a7f947","js/wmd.en.js":"6fb738ac6555","js/mobile.en.js":"4a1d56e42a88","js/help.en.js":"ea9b6d3ca995","js/tageditor.en.js":"8fc88803d94e","js/tageditornew.en.js":"e986e3658188","js/inline-tag-editing.en.js":"8e73ea969326","js/revisions.en.js":"be10a4167571","js/review.en.js":"aec17442ea99","js/tagsuggestions.en.js":"78eee7c19ab2","js/post-validation.en.js":"a9cc3be9b7da","js/explore-qlist.en.js":"13036a5f10ad","js/events.en.js":"90c83f6510ec","js/keyboard-shortcuts.en.js":"d069ae64dcff","js/external-editor.en.js":"53b91af35f73","js/adops.en.js":"22a9bd59b1e9","js/external-editor.en.js":"53b91af35f73","js/snippet-javascript.en.js":"ab76fd99422a","js/snippet-javascript-codemirror.en.js":"1afd891ff5fb"});
+        StackExchange.using("gps", function() {
             StackExchange.gps.init(true);
-        }); """
+        }); """)
     ), " ", 
     tag("noscript")(id := "noscript-css", 
       tag("style")(
-        "body,.top-bar{margin-top:1.9em}"
+        raw("body,.top-bar{margin-top:1.9em}")
       )
     ), " "
   ), 
@@ -58,9 +58,9 @@ html(cls := "html__responsive",
             span(cls := "-img _glyph", "Stack Overflow"), " "
           ), " "
         ), " ", 
-        form(id := "search", action := "/search", method := "get", cls := "searchbar js-searchbar", autocomplete := "off", role := "search", " ", 
+        form(id := "search", action := "/search", method := "get", cls := "searchbar js-searchbar ", autocomplete := "off", role := "search", " ", 
           div(cls := "ps-relative", " ", 
-            input(name := "q", tpe := "text", placeholder := "Search…", value := "", autocomplete := "off", maxlength := "240", cls := "f-input js-search-field"), " ", 
+            input(name := "q", tpe := "text", placeholder := "Search…", value := "", autocomplete := "off", maxlength := "240", cls := "f-input js-search-field "), " ", 
             button(tpe := "submit", aria.label := "Search...", cls := "s-btn s-btn__primary btn-topbar-primary js-search-submit", 
               tag("svg")(aria.hidden := "true", cls := "svg-icon mx0 iconSearch", attr("width") := "18", attr("height") := "18", attr("viewBox") := "0 0 18 18", 
                 tag("path")(attr("d") := "M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z")
@@ -84,15 +84,15 @@ html(cls := "html__responsive",
               div(cls := "-rep js-header-rep", title := "your reputation: 1,389", "1,389"), " ", 
               div(cls := "-badges", " ", 
                 span(title := "1 gold badge", 
-                  span(cls := "badge1", "&#9679;"), 
+                  span(cls := "badge1", raw("&#9679;")), 
                   span(cls := "badgecount", "1")
                 ), 
                 span(title := "12 silver badges", 
-                  span(cls := "badge2", "&#9679;"), 
+                  span(cls := "badge2", raw("&#9679;")), 
                   span(cls := "badgecount", "12")
                 ), 
                 span(title := "25 bronze badges", 
-                  span(cls := "badge3", "&#9679;"), 
+                  span(cls := "badge3", raw("&#9679;")), 
                   span(cls := "badgecount", "25")
                 ), " "
               ), " "
@@ -309,8 +309,8 @@ html(cls := "html__responsive",
       ), " "
     ), " ", 
     script(
-      """ StackExchange.ready(function () { StackExchange.topbar.init({ observeSize: true }); });
-    StackExchange.scrollPadding.setPaddingTop(50, 10); """
+      raw(""" StackExchange.ready(function () { StackExchange.topbar.init({ observeSize: true }); });
+    StackExchange.scrollPadding.setPaddingTop(50, 10); """)
     ), " ", 
     div(cls := "container", " ", 
       div(id := "left-sidebar", data("data-is-here") := "md lg", cls := "left-sidebar js-pinned-left-sidebar", " ", 
@@ -318,7 +318,7 @@ html(cls := "html__responsive",
           tag("nav")(role := "navigation", " ", 
             ol(cls := "nav-links", " ", 
               li(" ", 
-                li(cls := "youarehere", " ", 
+                li(cls := " youarehere", " ", 
                   a(href := "/", cls := "pl8 js-gps-track nav-links--link", data("data-gps-") := "top_nav.click({is_current:true, location:1, destination:8})", " Home "), " "
                 ), " "
               ), " ", 
@@ -334,13 +334,13 @@ html(cls := "html__responsive",
                     ), " "
                   ), " ", 
                   li(" ", 
-                    a(id := "nav-tags", href := "/tags", cls := "js-gps-track nav-links--link", data("data-gps-") := "top_nav.click({is_current:false, location:1, destination:2})", " Tags "), " "
+                    a(id := "nav-tags", href := "/tags", cls := " js-gps-track nav-links--link", data("data-gps-") := "top_nav.click({is_current:false, location:1, destination:2})", " Tags "), " "
                   ), " ", 
                   li(" ", 
-                    a(id := "nav-users", href := "/users", cls := "js-gps-track nav-links--link", data("data-gps-") := "top_nav.click({is_current:false, location:1, destination:3})", " Users "), " "
+                    a(id := "nav-users", href := "/users", cls := " js-gps-track nav-links--link", data("data-gps-") := "top_nav.click({is_current:false, location:1, destination:3})", " Users "), " "
                   ), " ", 
                   li(" ", 
-                    a(id := "nav-jobs", href := "/jobs?med=site-ui&ref=jobs-tab", cls := "js-gps-track nav-links--link", data("data-gps-") := "top_nav.click({is_current:false, location:1, destination:6})", " Jobs "), " "
+                    a(id := "nav-jobs", href := "/jobs?med=site-ui&ref=jobs-tab", cls := " js-gps-track nav-links--link", data("data-gps-") := "top_nav.click({is_current:false, location:1, destination:6})", " Jobs "), " "
                   ), " "
                 ), " "
               ), " ", 
@@ -350,7 +350,7 @@ html(cls := "html__responsive",
                     div(cls := "ba bc-black-2 bar-sm p16 grid fd-column ps-relative overflow-hidden", " ", 
                       strong(cls := "grid--cell", "Teams"), " ", 
                       span(cls := "grid--cell mt2 fs-caption fc-medium", "Q&A for work "), " ", 
-                      a(href := "https://stackoverflow.com/teams", cls := "js-gps-track s-btn s-btn__outlined ta-center grid--cell mt12", data("data-gps-") := "teams.create.left-sidenav.click", data("da") := "[\"teams traffic\",\"left nav cta\",\"stackoverflow.com/teams\",null,{\"dimension4\":\"teams\"}]", " Learn More "), " ", 
+                      a(href := "https://stackoverflow.com/teams", cls := "js-gps-track s-btn s-btn__outlined ta-center grid--cell mt12", data("data-gps-") := "teams.create.left-sidenav.click", data("da") := """["teams traffic","left nav cta","stackoverflow.com/teams",null,{"dimension4":"teams"}]""", " Learn More "), " ", 
                       div(cls := "ps-absolute t4 rn6", " ", 
                         tag("svg")(attr("width") := "53", attr("height") := "49", attr("fill") := "none", xmlns := "http://www.w3.org/2000/svg", 
                           tag("path")(attr("d") := "M49 11l.2 31H18.9L9 49v-7H4V8h31", attr("fill") := "#CCEAFF"), 
@@ -439,7 +439,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:43:53Z", cls := "relativetime", "1 min ago")
                       ), " ", 
                       a(href := "/users/8244025/dev-for-fun", "dev.for.fun"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "118"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "118"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -479,7 +479,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:43:40Z", cls := "relativetime", "1 min ago")
                       ), " ", 
                       a(href := "/users/3305994/kkk", "kkk"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "11"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "11"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -566,7 +566,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:43:16Z", cls := "relativetime", "2 mins ago")
                       ), " ", 
                       a(href := "/users/7486447/arkhan", "ARKhan"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "91"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "91"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -607,7 +607,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:43:05Z", cls := "relativetime", "2 mins ago")
                       ), " ", 
                       a(href := "/users/5164470/rasula-caldera", "Rasula Caldera"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "136"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "136"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -693,7 +693,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:41:10Z", cls := "relativetime", "4 mins ago")
                       ), " ", 
                       a(href := "/users/8660149/kim-hansen", "Kim Hansen"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "26"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "26"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -733,7 +733,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:40:26Z", cls := "relativetime", "5 mins ago")
                       ), " ", 
                       a(href := "/users/887343/forhas", "forhas"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "4,843"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "4,843"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -774,7 +774,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:40:21Z", cls := "relativetime", "5 mins ago")
                       ), " ", 
                       a(href := "/users/7398298/arjunan", "arjunan"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "124"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "124"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -813,7 +813,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:40:13Z", cls := "relativetime", "5 mins ago")
                       ), " ", 
                       a(href := "/users/5184681/mostafamashayekhi", "MostafaMashayekhi"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "4,301"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "4,301"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -852,7 +852,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:40:07Z", cls := "relativetime", "5 mins ago")
                       ), " ", 
                       a(href := "/users/9565219/philip-yoon", "Philip Yoon"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "5"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "5"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -894,7 +894,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:39:52Z", cls := "relativetime", "5 mins ago")
                       ), " ", 
                       a(href := "/users/8172857/boussadjra-brahim", "boussadjra brahim"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "1,174"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "1,174"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -933,7 +933,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:39:33Z", cls := "relativetime", "6 mins ago")
                       ), " ", 
                       a(href := "/users/10333852/solst", "solst"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "7"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "7"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -974,7 +974,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:38:02Z", cls := "relativetime", "7 mins ago")
                       ), " ", 
                       a(href := "/users/5577814/evan-snapp", "Evan Snapp"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "106"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "106"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -1015,7 +1015,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:37:46Z", cls := "relativetime", "7 mins ago")
                       ), " ", 
                       a(href := "/users/10215232/spasa-mihajlovic", "Spasa Mihajlovic"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "71"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "71"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -1099,7 +1099,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:37:07Z", cls := "relativetime", "8 mins ago")
                       ), " ", 
                       a(href := "/users/1207670/mistic", "Mistic"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "651"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "651"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -1146,7 +1146,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:36:51Z", cls := "relativetime", "8 mins ago")
                       ), " ", 
                       a(href := "/users/1540350/modix", "modiX"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "1,919"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "1,919"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -1190,7 +1190,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:36:23Z", cls := "relativetime", "9 mins ago")
                       ), " ", 
                       a(href := "/users/10122791/augustin-r", "Augustin R"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "773"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "773"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -1231,7 +1231,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:35:02Z", cls := "relativetime", "10 mins ago")
                       ), " ", 
                       a(href := "/users/10014767/nazir-massaad", "Nazir Massaad"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "1"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "1"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -1275,7 +1275,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:34:54Z", cls := "relativetime", "10 mins ago")
                       ), " ", 
                       a(href := "/users/1146395/ahmad-ahmadi", "Ahmad Ahmadi"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "144"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "144"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -1314,7 +1314,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:34:14Z", cls := "relativetime", "11 mins ago")
                       ), " ", 
                       a(href := "/users/2210508/jay-patel", "Jay Patel"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "187"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "187"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -1355,7 +1355,7 @@ html(cls := "html__responsive",
                       a(href := "/users/4021436/irritable-phd-syndrom", 
                         "irritable_phd_syndrom"
                       ), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "951"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "951"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -1394,7 +1394,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:34:12Z", cls := "relativetime", "11 mins ago")
                       ), " ", 
                       a(href := "/users/10011003/matt-b", "Matt B."), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "476"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "476"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -1436,7 +1436,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:33:59Z", cls := "relativetime", "11 mins ago")
                       ), " ", 
                       a(href := "/users/4529546/richard", "Richard"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "490"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "490"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -1479,7 +1479,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:33:55Z", cls := "relativetime", "11 mins ago")
                       ), " ", 
                       a(href := "/users/5333879/borino", "borino"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "556"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "556"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -1524,7 +1524,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:32:12Z", cls := "relativetime", "13 mins ago")
                       ), " ", 
                       a(href := "/users/8189772/srp", "SRP"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "57"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "57"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -1569,7 +1569,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:31:52Z", cls := "relativetime", "13 mins ago")
                       ), " ", 
                       a(href := "/users/7575254/vijay-anand", "Vijay Anand"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "1"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "1"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -1608,7 +1608,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:31:44Z", cls := "relativetime", "13 mins ago")
                       ), " ", 
                       a(href := "/users/1812278/coding-duchess", "Coding Duchess"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "2,261"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "2,261"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -1651,7 +1651,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:29:53Z", cls := "relativetime", "15 mins ago")
                       ), " ", 
                       a(href := "/users/1581278/max-waterman", "Max Waterman"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "96"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "96"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -1737,7 +1737,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:29:26Z", cls := "relativetime", "16 mins ago")
                       ), " ", 
                       a(href := "/users/4549577/manish-patiyal", "Manish Patiyal"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "1,894"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "1,894"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -1778,7 +1778,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:29:24Z", cls := "relativetime", "16 mins ago")
                       ), " ", 
                       a(href := "/users/9240234/springuser", "SpringUser"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "114"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "114"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -1820,7 +1820,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:28:50Z", cls := "relativetime", "16 mins ago")
                       ), " ", 
                       a(href := "/users/7189597/sobhan", "Sobhan"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "1"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "1"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -1899,7 +1899,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:27:24Z", cls := "relativetime", "18 mins ago")
                       ), " ", 
                       a(href := "/users/7142202/user7142202", "user7142202"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "1"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "1"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -1987,7 +1987,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:26:18Z", cls := "relativetime", "19 mins ago")
                       ), " ", 
                       a(href := "/users/9601701/mike", "Mike"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "31"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "31"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -2027,7 +2027,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:26:17Z", cls := "relativetime", "19 mins ago")
                       ), " ", 
                       a(href := "/users/2883245/erip", "erip"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "9,341"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "9,341"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -2068,7 +2068,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:25:06Z", cls := "relativetime", "20 mins ago")
                       ), " ", 
                       a(href := "/users/4551608/harish", "Harish"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "163"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "163"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -2108,7 +2108,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:24:43Z", cls := "relativetime", "20 mins ago")
                       ), " ", 
                       a(href := "/users/7540911/nullman", "Nullman"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "1,171"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "1,171"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -2149,7 +2149,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:23:46Z", cls := "relativetime", "21 mins ago")
                       ), " ", 
                       a(href := "/users/1408347/brian", "Brian"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "2,352"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "2,352"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -2189,7 +2189,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:23:05Z", cls := "relativetime", "22 mins ago")
                       ), " ", 
                       a(href := "/users/3729819/sushmit-patil", "Sushmit Patil"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "586"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "586"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -2229,7 +2229,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:22:55Z", cls := "relativetime", "22 mins ago")
                       ), " ", 
                       a(href := "/users/2490510/user", "User"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "104"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "104"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -2269,7 +2269,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:22:26Z", cls := "relativetime", "23 mins ago")
                       ), " ", 
                       a(href := "/users/4245678/neill", "Neill"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "31"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "31"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -2308,7 +2308,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:22:21Z", cls := "relativetime", "23 mins ago")
                       ), " ", 
                       a(href := "/users/10171937/andre-brehme", "Andre Brehme"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "1"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "1"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -2348,7 +2348,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:21:59Z", cls := "relativetime", "23 mins ago")
                       ), " ", 
                       a(href := "/users/2635672/mike-alizade", "Mike Alizade"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "30"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "30"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -2376,7 +2376,7 @@ html(cls := "html__responsive",
                   div(cls := "summary", " ", 
                     h3(
                       a(href := "/questions/52611148/why-doesnt-guava-ratelimiter-limit-for-too-large-permits-per-second-anymore", cls := "question-hyperlink", 
-                        "Why doesn&#39;t Guava RateLimiter limit for too large permits per second anymore?"
+                        "Why doesn't Guava RateLimiter limit for too large permits per second anymore?"
                       )
                     ), " ", 
                     div(cls := "tags t-java t-limit t-guava t-rate-limiting", " ", 
@@ -2471,7 +2471,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:18:27Z", cls := "relativetime", "27 mins ago")
                       ), " ", 
                       a(href := "/users/2076463/qylin", "Qylin"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "808"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "808"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -2510,7 +2510,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:12:13Z", cls := "relativetime", "33 mins ago")
                       ), " ", 
                       a(href := "/users/8849741/thomas-de-giacinto", "Thomas De Giacinto"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "1"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "1"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -2578,7 +2578,7 @@ html(cls := "html__responsive",
                   div(cls := "summary", " ", 
                     h3(
                       a(href := "/questions/52625853/block-characters-%c3%ab-%c3%a0-%c3%a9-%c3%a4-etc-from-keypad-in-android", cls := "question-hyperlink", 
-                        "block characters &#235;,&#224;,&#233;,&#228; etc from keypad in android"
+                        "block characters ë,à,é,ä etc from keypad in android"
                       )
                     ), " ", 
                     div(cls := "tags t-java t-android t-android-input-filter", " ", 
@@ -2595,7 +2595,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:05:22Z", cls := "relativetime", "40 mins ago")
                       ), " ", 
                       a(href := "/users/5783253/varma", "Varma"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "108"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "108"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -2637,7 +2637,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 12:03:53Z", cls := "relativetime", "41 mins ago")
                       ), " ", 
                       a(href := "/users/1843883/user1843883", "user1843883"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "4"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "4"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -2665,7 +2665,7 @@ html(cls := "html__responsive",
                   div(cls := "summary", " ", 
                     h3(
                       a(href := "/questions/52624233/unescapejava-error-java-lang-illegalargumentexception-less-than-4-hex-digits-i", cls := "question-hyperlink", 
-                        "unescapeJava error &ldquo;java.lang.IllegalArgumentException: Less than 4 hex digits in unicode value: &#39;\\uD&#39; due to end of CharSequence&rdquo;"
+                        "unescapeJava error “java.lang.IllegalArgumentException: Less than 4 hex digits in unicode value: '\\uD' due to end of CharSequence”"
                       )
                     ), " ", 
                     div(cls := "tags t-java t-android", " ", 
@@ -2719,7 +2719,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 11:59:31Z", cls := "relativetime", "46 mins ago")
                       ), " ", 
                       a(href := "/users/10451007/tkalenko-k-g", "Tkalenko K.G."), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "1"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "1"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -2764,7 +2764,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 11:59:12Z", cls := "relativetime", "46 mins ago")
                       ), " ", 
                       a(href := "/users/6928237/ruann-reis", "Ruann Reis"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "145"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "145"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -2804,7 +2804,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 11:58:46Z", cls := "relativetime", "46 mins ago")
                       ), " ", 
                       a(href := "/users/964961/fguchelaar", "fguchelaar"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "4,106"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "4,106"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -2846,7 +2846,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 11:57:31Z", cls := "relativetime", "48 mins ago")
                       ), " ", 
                       a(href := "/users/10174193/ash", "Ash"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "6"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "6"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -2889,7 +2889,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 11:56:18Z", cls := "relativetime", "49 mins ago")
                       ), " ", 
                       a(href := "/users/4855610/imen-gharsalli", "Imen Gharsalli"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "184"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "184"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -2930,7 +2930,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 11:55:31Z", cls := "relativetime", "50 mins ago")
                       ), " ", 
                       a(href := "/users/8189903/star67", "star67"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "33"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "33"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -2970,7 +2970,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 11:55:19Z", cls := "relativetime", "50 mins ago")
                       ), " ", 
                       a(href := "/users/6057787/irshad-ahmed", "Irshad Ahmed"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "349"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "349"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -3011,7 +3011,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 11:55:13Z", cls := "relativetime", "50 mins ago")
                       ), " ", 
                       a(href := "/users/4815321/mr-mcwolf", "mr mcwolf"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "1,249"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "1,249"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -3039,7 +3039,7 @@ html(cls := "html__responsive",
                   div(cls := "summary", " ", 
                     h3(
                       a(href := "/questions/52584625/android-studio-gradle-sync-failed-could-not-run-jvm-from-the-selected-jdk", cls := "question-hyperlink", 
-                        "Android Studio: &ldquo;Gradle sync failed: Could not run JVM from the selected JDK.&rdquo;"
+                        "Android Studio: “Gradle sync failed: Could not run JVM from the selected JDK.”"
                       )
                     ), " ", 
                     div(cls := "tags t-java t-android t-android-gradle", " ", 
@@ -3053,10 +3053,8 @@ html(cls := "html__responsive",
                       a(href := "/questions/52584625/android-studio-gradle-sync-failed-could-not-run-jvm-from-the-selected-jdk/?lastactivity", cls := "started-link", "answered ", 
                         span(title := "2018-10-03 11:51:39Z", cls := "relativetime", "53 mins ago")
                       ), " ", 
-                      a(href := "/users/4782446/v%c3%adctor-l%c3%b3pez", 
-                        "V&#237;ctor L&#243;pez"
-                      ), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "519"), " "
+                      a(href := "/users/4782446/v%c3%adctor-l%c3%b3pez", "Víctor López"), " ", 
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "519"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -3097,7 +3095,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 11:51:20Z", cls := "relativetime", "54 mins ago")
                       ), " ", 
                       a(href := "/users/5672261/nitin-vavdiya", "Nitin Vavdiya"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "480"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "480"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -3137,7 +3135,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 11:46:06Z", cls := "relativetime", "59 mins ago")
                       ), " ", 
                       a(href := "/users/10390139/elpolloloco", "elPolloLoco"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "61"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "61"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -3178,7 +3176,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 11:40:16Z", cls := "relativetime", "1 hour ago")
                       ), " ", 
                       a(href := "/users/3458271/user3458271", "user3458271"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "86"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "86"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -3218,7 +3216,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 11:39:55Z", cls := "relativetime", "1 hour ago")
                       ), " ", 
                       a(href := "/users/10449288/benno", "BENNO"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "4"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "4"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -3301,7 +3299,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 11:36:49Z", cls := "relativetime", "1 hour ago")
                       ), " ", 
                       a(href := "/users/8780684/martin", "Martin"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "127"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "127"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -3343,7 +3341,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 11:35:07Z", cls := "relativetime", "1 hour ago")
                       ), " ", 
                       a(href := "/users/1602555/karol-dowbecki", "Karol Dowbecki"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "9,764"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "9,764"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -3384,7 +3382,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 11:33:49Z", cls := "relativetime", "1 hour ago")
                       ), " ", 
                       a(href := "/users/7661411/sudhakar", "sudhakar"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "11"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "11"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -3424,7 +3422,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 11:31:06Z", cls := "relativetime", "1 hour ago")
                       ), " ", 
                       a(href := "/users/2698859/irfan-bhindawala", "Irfan Bhindawala"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "277"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "277"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -3467,7 +3465,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 11:30:03Z", cls := "relativetime", "1 hour ago")
                       ), " ", 
                       a(href := "/users/10449701/yevgeni-n", "Yevgeni N"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "18"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "18"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -3495,7 +3493,7 @@ html(cls := "html__responsive",
                   div(cls := "summary", " ", 
                     h3(
                       a(href := "/questions/52626067/microsoft-graph-api-insufficient-privileges-when-trying-to-update-mobilephone", cls := "question-hyperlink", 
-                        "Microsoft Graph API Insufficient privileges when trying to update &#39;mobilePhone&#39;"
+                        "Microsoft Graph API Insufficient privileges when trying to update 'mobilePhone'"
                       )
                     ), " ", 
                     div(cls := "tags t-azure-active-directory t-microsoft-graph", " ", 
@@ -3510,7 +3508,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 11:27:54Z", cls := "relativetime", "1 hour ago")
                       ), " ", 
                       a(href := "/users/10450763/rinaldsr", "RinaldsR"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "11"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "11"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -3604,7 +3602,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 11:03:34Z", cls := "relativetime", "1 hour ago")
                       ), " ", 
                       a(href := "/users/10450750/zaha", "Zaha"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "6"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "6"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -3646,7 +3644,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 10:56:47Z", cls := "relativetime", "1 hour ago")
                       ), " ", 
                       a(href := "/users/1987514/ben-green", "Ben Green"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "2,783"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "2,783"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -3693,7 +3691,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 10:50:50Z", cls := "relativetime", "1 hour ago")
                       ), " ", 
                       a(href := "/users/7617328/divye-shah", "Divye Shah"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "53"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "53"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -3736,7 +3734,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 10:50:18Z", cls := "relativetime", "1 hour ago")
                       ), " ", 
                       a(href := "/users/9093630/ahmad-darwesh", "Ahmad Darwesh"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "61"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "61"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -3776,7 +3774,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 10:49:13Z", cls := "relativetime", "1 hour ago")
                       ), " ", 
                       a(href := "/users/4688115/graham-pople", "Graham Pople"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "11"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "11"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -3862,7 +3860,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 10:40:00Z", cls := "relativetime", "2 hours ago")
                       ), " ", 
                       a(href := "/users/1185421/seppo420", "Seppo420"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "667"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "667"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -3948,7 +3946,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 10:26:43Z", cls := "relativetime", "2 hours ago")
                       ), " ", 
                       a(href := "/users/8693592/rishav-singla", "Rishav Singla"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "154"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "154"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -3976,7 +3974,7 @@ html(cls := "html__responsive",
                   div(cls := "summary", " ", 
                     h3(
                       a(href := "/questions/52619452/snakeyaml-unable-to-find-property-error", cls := "question-hyperlink", 
-                        "SnakeYaml &ldquo;Unable to find property error&rdquo;"
+                        "SnakeYaml “Unable to find property error”"
                       )
                     ), " ", 
                     div(cls := "tags t-java t-yaml t-snakeyaml", " ", 
@@ -4030,7 +4028,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 10:11:47Z", cls := "relativetime", "2 hours ago")
                       ), " ", 
                       a(href := "/users/7713802/harshith-bolar", "Harshith Bolar"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "79"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "79"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -4071,7 +4069,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 10:08:10Z", cls := "relativetime", "2 hours ago")
                       ), " ", 
                       a(href := "/users/1783166/redspider", "redspider"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "188"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "188"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -4114,7 +4112,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 10:04:58Z", cls := "relativetime", "2 hours ago")
                       ), " ", 
                       a(href := "/users/5288347/sviatlana", "Sviatlana"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "354"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "354"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -4157,7 +4155,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 10:04:14Z", cls := "relativetime", "2 hours ago")
                       ), " ", 
                       a(href := "/users/10450554/medepalli-pratap", "MEDEPALLI PRATAP"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "1"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "1"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -4202,7 +4200,7 @@ html(cls := "html__responsive",
                       a(href := "/users/4116955/mahesh-h-viraktamath", 
                         "Mahesh H Viraktamath"
                       ), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "232"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "232"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -4245,7 +4243,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 10:02:36Z", cls := "relativetime", "2 hours ago")
                       ), " ", 
                       a(href := "/users/8578250/harit-yadav", "Harit Yadav"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "1"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "1"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -4287,7 +4285,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 09:57:57Z", cls := "relativetime", "2 hours ago")
                       ), " ", 
                       a(href := "/users/9231830/rod182211", "Rod182211"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "1"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "1"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -4327,7 +4325,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 09:56:03Z", cls := "relativetime", "2 hours ago")
                       ), " ", 
                       a(href := "/users/10450560/geoff", "Geoff"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "1"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "1"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -4370,7 +4368,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 09:44:47Z", cls := "relativetime", "3 hours ago")
                       ), " ", 
                       a(href := "/users/5747715/jorge-c", "Jorge C"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "174"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "174"), " "
                     ), " "
                   ), " "
                 ), " ", 
@@ -4414,7 +4412,7 @@ html(cls := "html__responsive",
                         span(title := "2018-10-03 09:42:28Z", cls := "relativetime", "3 hours ago")
                       ), " ", 
                       a(href := "/users/10187988/maicake", "Maicake"), " ", 
-                      span(cls := "reputation-score", title := "reputation score", dir := "ltr", "34"), " "
+                      span(cls := "reputation-score", title := "reputation score ", dir := "ltr", "34"), " "
                     ), " "
                   ), " "
                 ), " "
@@ -4433,7 +4431,7 @@ html(cls := "html__responsive",
             ), "."
           ), " ", 
           script(
-            " StackExchange.ready(function() { StackExchange.question.initShareLinks(); }); "
+            raw(" StackExchange.ready(function() { StackExchange.question.initShareLinks(); }); ")
           ), " "
         ), " ", 
         div(id := "sidebar", " ", 
@@ -4443,12 +4441,12 @@ html(cls := "html__responsive",
               hr(), " ", 
               div(cls := "spacer", " ", 
                 div(cls := "bulletin-item-type", " ", 
-                  a(href := "https://meta.stackexchange.com/questions/315662/responsive-design-released-for-all-beta-undesigned-sites", cls := "question-hyperlink", data("da") := "[\"community bulletin board\",\"Featured on Meta\",\"https://meta.stackexchange.com/questions/315662/responsive-design-released-for-all-beta-undesigned-sites\",null,null]", " ", 
+                  a(href := "https://meta.stackexchange.com/questions/315662/responsive-design-released-for-all-beta-undesigned-sites", cls := "question-hyperlink", data("da") := """["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/315662/responsive-design-released-for-all-beta-undesigned-sites",null,null]""", " ", 
                     div(cls := "favicon favicon-stackexchangemeta", title := "Meta Stack Exchange"), " "
                   ), " "
                 ), " ", 
                 div(cls := "bulletin-item-content", " ", 
-                  a(href := "https://meta.stackexchange.com/questions/315662/responsive-design-released-for-all-beta-undesigned-sites", cls := "question-hyperlink", data("da") := "[\"community bulletin board\",\"Featured on Meta\",\"https://meta.stackexchange.com/questions/315662/responsive-design-released-for-all-beta-undesigned-sites\",null,null]", 
+                  a(href := "https://meta.stackexchange.com/questions/315662/responsive-design-released-for-all-beta-undesigned-sites", cls := "question-hyperlink", data("da") := """["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/315662/responsive-design-released-for-all-beta-undesigned-sites",null,null]""", 
                     "Responsive design released for all Beta & Undesigned sites"
                   ), " "
                 ), " ", 
@@ -4456,25 +4454,25 @@ html(cls := "html__responsive",
               ), " ", 
               div(cls := "spacer", " ", 
                 div(cls := "bulletin-item-type", " ", 
-                  a(href := "https://meta.stackoverflow.com/questions/373920/vsts-has-been-renamed-to-azure-devops-lets-talk-about-some-tags", cls := "question-hyperlink", data("da") := "[\"community bulletin board\",\"Featured on Meta\",\"https://meta.stackoverflow.com/questions/373920/vsts-has-been-renamed-to-azure-devops-lets-talk-about-some-tags\",null,null]", " ", 
+                  a(href := "https://meta.stackoverflow.com/questions/373920/vsts-has-been-renamed-to-azure-devops-lets-talk-about-some-tags", cls := "question-hyperlink", data("da") := """["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/373920/vsts-has-been-renamed-to-azure-devops-lets-talk-about-some-tags",null,null]""", " ", 
                     div(cls := "favicon favicon-stackoverflowmeta", title := "Meta Stack Overflow"), " "
                   ), " "
                 ), " ", 
                 div(cls := "bulletin-item-content", " ", 
-                  a(href := "https://meta.stackoverflow.com/questions/373920/vsts-has-been-renamed-to-azure-devops-lets-talk-about-some-tags", cls := "question-hyperlink", data("da") := "[\"community bulletin board\",\"Featured on Meta\",\"https://meta.stackoverflow.com/questions/373920/vsts-has-been-renamed-to-azure-devops-lets-talk-about-some-tags\",null,null]", 
-                    "VSTS has been renamed to Azure DevOps - let&#39;s talk about some tags"
+                  a(href := "https://meta.stackoverflow.com/questions/373920/vsts-has-been-renamed-to-azure-devops-lets-talk-about-some-tags", cls := "question-hyperlink", data("da") := """["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/373920/vsts-has-been-renamed-to-azure-devops-lets-talk-about-some-tags",null,null]""", 
+                    "VSTS has been renamed to Azure DevOps - let's talk about some tags"
                   ), " "
                 ), " ", 
                 br(cls := "cbt"), " "
               ), " ", 
               div(cls := "spacer", " ", 
                 div(cls := "bulletin-item-type", " ", 
-                  a(href := "https://meta.stackoverflow.com/questions/374198/the-deep-tag-is-being-burned", cls := "question-hyperlink", data("da") := "[\"community bulletin board\",\"Featured on Meta\",\"https://meta.stackoverflow.com/questions/374198/the-deep-tag-is-being-burned\",null,null]", " ", 
+                  a(href := "https://meta.stackoverflow.com/questions/374198/the-deep-tag-is-being-burned", cls := "question-hyperlink", data("da") := """["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/374198/the-deep-tag-is-being-burned",null,null]""", " ", 
                     div(cls := "favicon favicon-stackoverflowmeta", title := "Meta Stack Overflow"), " "
                   ), " "
                 ), " ", 
                 div(cls := "bulletin-item-content", " ", 
-                  a(href := "https://meta.stackoverflow.com/questions/374198/the-deep-tag-is-being-burned", cls := "question-hyperlink", data("da") := "[\"community bulletin board\",\"Featured on Meta\",\"https://meta.stackoverflow.com/questions/374198/the-deep-tag-is-being-burned\",null,null]", 
+                  a(href := "https://meta.stackoverflow.com/questions/374198/the-deep-tag-is-being-burned", cls := "question-hyperlink", data("da") := """["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/374198/the-deep-tag-is-being-burned",null,null]""", 
                     "The [deep] tag is being burned"
                   ), " "
                 ), " ", 
@@ -4482,13 +4480,13 @@ html(cls := "html__responsive",
               ), " ", 
               div(cls := "spacer", " ", 
                 div(cls := "bulletin-item-type", " ", 
-                  a(href := "https://meta.stackoverflow.com/questions/374617/happy-10th-anniversary-stack-overflow-commence-au-festival", cls := "question-hyperlink", data("da") := "[\"community bulletin board\",\"Featured on Meta\",\"https://meta.stackoverflow.com/questions/374617/happy-10th-anniversary-stack-overflow-commence-au-festival\",null,null]", " ", 
+                  a(href := "https://meta.stackoverflow.com/questions/374617/happy-10th-anniversary-stack-overflow-commence-au-festival", cls := "question-hyperlink", data("da") := """["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/374617/happy-10th-anniversary-stack-overflow-commence-au-festival",null,null]""", " ", 
                     div(cls := "favicon favicon-stackoverflowmeta", title := "Meta Stack Overflow"), " "
                   ), " "
                 ), " ", 
                 div(cls := "bulletin-item-content", " ", 
-                  a(href := "https://meta.stackoverflow.com/questions/374617/happy-10th-anniversary-stack-overflow-commence-au-festival", cls := "question-hyperlink", data("da") := "[\"community bulletin board\",\"Featured on Meta\",\"https://meta.stackoverflow.com/questions/374617/happy-10th-anniversary-stack-overflow-commence-au-festival\",null,null]", 
-                    "Happy 10th anniversary Stack Overflow! Commence &hellip; au festival!"
+                  a(href := "https://meta.stackoverflow.com/questions/374617/happy-10th-anniversary-stack-overflow-commence-au-festival", cls := "question-hyperlink", data("da") := """["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/374617/happy-10th-anniversary-stack-overflow-commence-au-festival",null,null]""", 
+                    "Happy 10th anniversary Stack Overflow! Commence … au festival!"
                   ), " "
                 ), " ", 
                 br(cls := "cbt"), " "
@@ -4500,7 +4498,7 @@ html(cls := "html__responsive",
                   span(title := "Vote score (upvotes - downvotes)", "14"), " "
                 ), " ", 
                 div(cls := "bulletin-item-content", " ", 
-                  a(href := "https://meta.stackoverflow.com/questions/374746/flag-declined-on-a-question-re-reviewers-that-accepted-a-bad-imo-edit", cls := "question-hyperlink", data("da") := "[\"community bulletin board\",\"Hot Meta Posts\",\"https://meta.stackoverflow.com/questions/374746/flag-declined-on-a-question-re-reviewers-that-accepted-a-bad-imo-edit\",null,null]", 
+                  a(href := "https://meta.stackoverflow.com/questions/374746/flag-declined-on-a-question-re-reviewers-that-accepted-a-bad-imo-edit", cls := "question-hyperlink", data("da") := """["community bulletin board","Hot Meta Posts","https://meta.stackoverflow.com/questions/374746/flag-declined-on-a-question-re-reviewers-that-accepted-a-bad-imo-edit",null,null]""", 
                     "Flag declined on a question re: reviewers that accepted a bad (IMO) edit"
                   ), " "
                 ), " ", 
@@ -4522,8 +4520,8 @@ html(cls := "html__responsive",
               div(cls := "s-sidebarwidget--content fd-column", " ", 
                 div(cls := "js-watched-tag-list grid gs4 py4 fw-wrap d-none", " ", 
                   script(tpe := "text/html", cls := "js-tag-template", 
-                    "<div class=\"js-tag grid--cell \">", 
-                    "<a href=\"/questions/tagged/template\" class=\"post-tag\" title=\"show questions tagged &#39;template&#39;\" rel=\"tag\">template", "</a>", "</div>"
+                    raw("<div class=\"js-tag grid--cell \">"), 
+                    raw("""<a href="/questions/tagged/template" class="post-tag" title="show questions tagged &#39;template&#39;" rel="tag">template"""), raw("</a>"), raw("</div>")
                   ), " "
                 ), " ", 
                 div(cls := "js-add-watched-container"), " ", 
@@ -4553,8 +4551,8 @@ html(cls := "html__responsive",
               div(cls := "s-sidebarwidget--content fd-column", " ", 
                 div(cls := "js-ignored-tag-list grid gs4 py4 fw-wrap ai-baseline d-none", " ", 
                   script(tpe := "text/html", cls := "js-tag-template", 
-                    "<div class=\"js-tag grid--cell \">", 
-                    "<a href=\"/questions/tagged/template\" class=\"post-tag\" title=\"show questions tagged &#39;template&#39;\" rel=\"tag\">template", "</a>", "</div>"
+                    raw("<div class=\"js-tag grid--cell \">"), 
+                    raw("""<a href="/questions/tagged/template" class="post-tag" title="show questions tagged &#39;template&#39;" rel="tag">template"""), raw("</a>"), raw("</div>")
                   ), " "
                 ), " ", 
                 div(cls := "js-add-ignored-container"), " ", 
@@ -4581,20 +4579,20 @@ html(cls := "html__responsive",
             ), " "
           ), " ", 
           script(
-            """ StackExchange.ready(function() {
+            raw(""" StackExchange.ready(function() {
                     StackExchange.tagPreferences.applyPrefs(true, [], undefined);
-                }); """
+                }); """)
           ), 
           div(id := "dfp-tsb", cls := "everyonelovesstackoverflow everyoneloves__top-sidebar"), " ", 
           div(id := "hireme"), " ", 
           script(
-            ";try{(function(a){function b(a){return'string'==typeof a?document.getElementById(a):a}function c(a){return a=b(a),!!a&&'none'===getComputedStyle(a).display}function d(a){return!c(a)}function e(a){return!!a}function f(a){return /^\\s*$/.test(b(a).innerHTML)}function g(a){var b=a.style;b.height=b.maxHeight=b.minHeight='auto',b.display='none',[].forEach.call(a.children,g)}function h(a,b){var c;return function(){return a&&(c=a.call(b||this,arguments),a=null),c}}function i(a){var b=document.createElement('script');b.src=a,document.body.appendChild(b)}function j(a){return k([],a)}function k(a,b){return a.push=function(a){return b(),delete this.push,this.push(a)},a}function l(){try{return!new Function('return async()=>{};')}catch(a){return!0}}function m(){return'undefined'!=typeof googletag&&!!googletag.apiReady}function n(){m()||(googletag={cmd:j(A)})}function o(){var a=document.createElement('div');a.className='adsbox',a.id='clc-abd',a.style.position='absolute',a.style.pointerEvents='none',a.innerHTML='&nbsp;',document.body.appendChild(a)}function p(a){var b=a.serviceName,c=a.slot,d=a.lineItemId;try{var e=c.getSlotElementId(),f=[];e||f.push('id=0');var h=document.getElementById(e);if(!e||h?h.hasAttribute('data-clc-stalled')&&f.push('st=1'):f.push('el=0'),0!==f.length)return void B(f.join('&'));-1===x.dh.indexOf(d)?h.setAttribute('data-clc-prefilled','true'):g(h),h.setAttribute('data-clc-ready','true')}catch(a){var i=document.querySelector('#dfp-tsb, #dfp-isb, #clc-tsb');i&&i.setAttribute('data-clc-ready','true'),B('e=1')}}function q(){return Object.keys(F.ids)}function r(a){var b=F.ids[a],c=F.slots[b];'function'==typeof c&&(c=c(a));return{path:'/'+C+'/'+E+'/'+b+'/'+D,sizes:c,zone:b}}function s(a){return!(clc.collapse&&void 0!==clc.collapse[a])||!!clc.collapse[a]}function t(a,b){'dfp-isb'===a&&b.setTargeting('Sidebar',['Inline']),'dfp-tsb'===a&&b.setTargeting('Sidebar',['Right']);var c=r(a),d=c.path,e=c.sizes,f=c.zone,g=googletag.defineSlot(d,e,a);s(f)&&g.setCollapseEmptyDiv(!0,!0),g.addService(b),!1}function u(b){var c=a.dfp&&a.dfp.targeting||{};Object.keys(c).forEach(function(a){b.setTargeting(a,c[a])})}function v(a){var g=a.map(b).filter(e);return{eligible:g.filter(f).filter(d).map(function(a){return a.id}),ineligible:g.filter(c)}}function w(b){if(void 0===b&&(b=q()),!m())return n(),void googletag.cmd.push(function(){return w(b)});var c=v(b),d=c.eligible,e=c.ineligible;if(e.forEach(g),0!==d.length){o(),googletag.destroySlots();var f=googletag.pubads();f.enableSingleRequest(),a.sreEvent||(f.addEventListener('slotRenderEnded',p),a.sreEvent=!0),u(f),d.forEach(function(a){return t(a,f)}),googletag.enableServices(),d.forEach(function(a){googletag.display(a)})}}var x=function(a){for(var b=[],c=1;c", 
-            "<arguments.length;c++)b[c-1]=arguments[c];for(var d,e=0,f=b;e", 
-            "<f.length;e++)for(var g in d=f[e],d)a[g]=d[g];return a}({\"lib\":\"https://cdn.sstatic.net/clc/clc.min.js?v=04d772c81312\",\"style\":\"https://cdn.sstatic.net/clc/styles/clc.min.css?v=1db48f495ba1\",\"u\":\"https://clc.stackoverflow.com/markup.js\",\"wa\":true,\"kt\":2000,\"tto\":true,\"h\":\"clc.stackoverflow.com\",\"allowed\":\"^(((talent\\\\.)?stackoverflow)|(blog\\\\.codinghorror)|(serverfault|askubuntu)|([^\\\\.]+\\\\.stackexchange))\\\\.com$\",\"wv\":true,\"al\":false,\"dh\":[4385506061,4386578282,4386579572]},a.options||{}),y=h(function(){var a=x.lib;l()&&(a=a.replace(/(\\.min)?\\.js(\\?v=[0-9a-fA-F]+)?$/,'.ie$1.js$2')),i(a)}),z=a.cmd||[];Array.isArray(z)&&(0", 
-            "<z.length?y():k(z,y));var A=h(function(){i('https://www.googletagservices.com/tag/js/gpt.js')}),B=function(a){new Image().src='https://'+x.h+'/stalled.gif?'+a},C='248424177',D=/^\\/tags\\//.test(location.pathname)||/^\\/questions\\/tagged\\//.test(location.pathname)?'tag-pages':'question-pages',E=location.hostname;var F={slots:{lb:[[728,90]],mlb:[[728,90]],sb:function(a){return'dfp-tsb'===a?[[300,250],[300,600]]:[[300,250]]},\"tag-sponsorship\":[[730,135]],\"mobile-below-question\":[[320,50],[300,250]]},ids:{\"dfp-tlb\":'lb',\"dfp-mlb\":'mlb',\"dfp-tsb\":'sb',\"dfp-isb\":'sb',\"dfp-tag\":'tag-sponsorship',\"dfp-m-aq\":'mobile-below-question',\"clc-tlb\":'lb',\"clc-mlb\":'mlb',\"clc-tsb\":'sb'}};(function(){var b=x.al;b&&z.push(function(){return a.load()})})(),n(),a.dfp={load:w},a.options=x,a.cmd=z})(this.clc=this.clc||{})}catch(a){window.console.error(a)}"
+            raw(";try{(function(a){function b(a){return'string'==typeof a?document.getElementById(a):a}function c(a){return a=b(a),!!a&&'none'===getComputedStyle(a).display}function d(a){return!c(a)}function e(a){return!!a}function f(a){return /^\\s*$/.test(b(a).innerHTML)}function g(a){var b=a.style;b.height=b.maxHeight=b.minHeight='auto',b.display='none',[].forEach.call(a.children,g)}function h(a,b){var c;return function(){return a&&(c=a.call(b||this,arguments),a=null),c}}function i(a){var b=document.createElement('script');b.src=a,document.body.appendChild(b)}function j(a){return k([],a)}function k(a,b){return a.push=function(a){return b(),delete this.push,this.push(a)},a}function l(){try{return!new Function('return async()=>{};')}catch(a){return!0}}function m(){return'undefined'!=typeof googletag&&!!googletag.apiReady}function n(){m()||(googletag={cmd:j(A)})}function o(){var a=document.createElement('div');a.className='adsbox',a.id='clc-abd',a.style.position='absolute',a.style.pointerEvents='none',a.innerHTML='&nbsp;',document.body.appendChild(a)}function p(a){var b=a.serviceName,c=a.slot,d=a.lineItemId;try{var e=c.getSlotElementId(),f=[];e||f.push('id=0');var h=document.getElementById(e);if(!e||h?h.hasAttribute('data-clc-stalled')&&f.push('st=1'):f.push('el=0'),0!==f.length)return void B(f.join('&'));-1===x.dh.indexOf(d)?h.setAttribute('data-clc-prefilled','true'):g(h),h.setAttribute('data-clc-ready','true')}catch(a){var i=document.querySelector('#dfp-tsb, #dfp-isb, #clc-tsb');i&&i.setAttribute('data-clc-ready','true'),B('e=1')}}function q(){return Object.keys(F.ids)}function r(a){var b=F.ids[a],c=F.slots[b];'function'==typeof c&&(c=c(a));return{path:'/'+C+'/'+E+'/'+b+'/'+D,sizes:c,zone:b}}function s(a){return!(clc.collapse&&void 0!==clc.collapse[a])||!!clc.collapse[a]}function t(a,b){'dfp-isb'===a&&b.setTargeting('Sidebar',['Inline']),'dfp-tsb'===a&&b.setTargeting('Sidebar',['Right']);var c=r(a),d=c.path,e=c.sizes,f=c.zone,g=googletag.defineSlot(d,e,a);s(f)&&g.setCollapseEmptyDiv(!0,!0),g.addService(b),!1}function u(b){var c=a.dfp&&a.dfp.targeting||{};Object.keys(c).forEach(function(a){b.setTargeting(a,c[a])})}function v(a){var g=a.map(b).filter(e);return{eligible:g.filter(f).filter(d).map(function(a){return a.id}),ineligible:g.filter(c)}}function w(b){if(void 0===b&&(b=q()),!m())return n(),void googletag.cmd.push(function(){return w(b)});var c=v(b),d=c.eligible,e=c.ineligible;if(e.forEach(g),0!==d.length){o(),googletag.destroySlots();var f=googletag.pubads();f.enableSingleRequest(),a.sreEvent||(f.addEventListener('slotRenderEnded',p),a.sreEvent=!0),u(f),d.forEach(function(a){return t(a,f)}),googletag.enableServices(),d.forEach(function(a){googletag.display(a)})}}var x=function(a){for(var b=[],c=1;c"), 
+            raw("<arguments.length;c++)b[c-1]=arguments[c];for(var d,e=0,f=b;e"), 
+            raw("""<f.length;e++)for(var g in d=f[e],d)a[g]=d[g];return a}({"lib":"https://cdn.sstatic.net/clc/clc.min.js?v=04d772c81312","style":"https://cdn.sstatic.net/clc/styles/clc.min.css?v=1db48f495ba1","u":"https://clc.stackoverflow.com/markup.js","wa":true,"kt":2000,"tto":true,"h":"clc.stackoverflow.com","allowed":"^(((talent\\\\.)?stackoverflow)|(blog\\\\.codinghorror)|(serverfault|askubuntu)|([^\\\\.]+\\\\.stackexchange))\\\\.com$","wv":true,"al":false,"dh":[4385506061,4386578282,4386579572]},a.options||{}),y=h(function(){var a=x.lib;l()&&(a=a.replace(/(\\.min)?\\.js(\\?v=[0-9a-fA-F]+)?$/,'.ie$1.js$2')),i(a)}),z=a.cmd||[];Array.isArray(z)&&(0"""), 
+            raw("""<z.length?y():k(z,y));var A=h(function(){i('https://www.googletagservices.com/tag/js/gpt.js')}),B=function(a){new Image().src='https://'+x.h+'/stalled.gif?'+a},C='248424177',D=/^\\/tags\\//.test(location.pathname)||/^\\/questions\\/tagged\\//.test(location.pathname)?'tag-pages':'question-pages',E=location.hostname;var F={slots:{lb:[[728,90]],mlb:[[728,90]],sb:function(a){return'dfp-tsb'===a?[[300,250],[300,600]]:[[300,250]]},"tag-sponsorship":[[730,135]],"mobile-below-question":[[320,50],[300,250]]},ids:{"dfp-tlb":'lb',"dfp-mlb":'mlb',"dfp-tsb":'sb',"dfp-isb":'sb',"dfp-tag":'tag-sponsorship',"dfp-m-aq":'mobile-below-question',"clc-tlb":'lb',"clc-mlb":'mlb',"clc-tsb":'sb'}};(function(){var b=x.al;b&&z.push(function(){return a.load()})})(),n(),a.dfp={load:w},a.options=x,a.cmd=z})(this.clc=this.clc||{})}catch(a){window.console.error(a)}""")
           ), " ", 
           script(
-            """ var clc = clc || {};
+            raw(""" var clc = clc || {};
             clc.collapse = { sb: !0,'tag-sponsorship':!0,lb:!1,mlb:!1,'mobile-below-question':!0};
             clc.cmd = clc.cmd || [];
             clc.cmd.push(function () { window.clc_request='At5-jx0uKdYIc7cXAAAAAAACAAAAAQAAAAMAAAAAAEhsDkULf3IXaH8'; clc.load(); });
@@ -4603,7 +4601,7 @@ html(cls := "html__responsive",
 
             var googletag = googletag || {};
             googletag.cmd = googletag.cmd || [];
-            googletag.cmd.push(function () { clc.dfp.load(); }); """
+            googletag.cmd.push(function () { clc.dfp.load(); }); """)
           ), 
           div(id := "hot-network-questions", cls := "module tex2jax_ignore", " ", 
             h4(" ", 
@@ -4663,7 +4661,7 @@ html(cls := "html__responsive",
               li(" ", 
                 div(cls := "favicon favicon-aviation", title := "Aviation Stack Exchange"), 
                 a(href := "https://aviation.stackexchange.com/questions/55473/why-dont-jetliners-maneuver-to-avoid-a-bird-strike-if-spotted-in-time", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:528 }); posts_hot_network.click({ item_type:2, location:8 })", 
-                  " Why don&#39;t jetliners maneuver to avoid a bird strike if spotted in time? "
+                  " Why don't jetliners maneuver to avoid a bird strike if spotted in time? "
                 ), " "
               ), " ", 
               li(" ", 
@@ -4723,7 +4721,7 @@ html(cls := "html__responsive",
               li(cls := "dno js-hidden", " ", 
                 div(cls := "favicon favicon-academia", title := "Academia Stack Exchange"), 
                 a(href := "https://academia.stackexchange.com/questions/117799/just-starting-in-grad-school-i-havent-heard-from-my-advisor-in-three-weeks", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:415 }); posts_hot_network.click({ item_type:2, location:8 })", 
-                  " Just starting in grad school, I haven&#39;t heard from my advisor in three weeks … "
+                  " Just starting in grad school, I haven't heard from my advisor in three weeks … "
                 ), " "
               ), " ", 
               li(cls := "dno js-hidden", " ", 
@@ -4735,7 +4733,7 @@ html(cls := "html__responsive",
               li(cls := "dno js-hidden", " ", 
                 div(cls := "favicon favicon-money", title := "Personal Finance & Money Stack Exchange"), 
                 a(href := "https://money.stackexchange.com/questions/100649/how-far-in-advance-can-insider-sell-their-own-companys-stock", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:93 }); posts_hot_network.click({ item_type:2, location:8 })", 
-                  " How far in advance can insider sell their own company&#39;s stock? "
+                  " How far in advance can insider sell their own company's stock? "
                 ), " "
               ), " ", 
               li(cls := "dno js-hidden", " ", 
@@ -4818,7 +4816,7 @@ html(cls := "html__responsive",
             ), " ", 
             ul(cls := "-list", " ", 
               li(cls := "-item", 
-                a(href := "https://stackoverflow.com/teams", cls := "js-gps-track -link", data("da") := "[\"teams traffic\",\"footer - site nav\",\"stackoverflow.com/teams\",null,{\"dimension4\":\"teams\"}]", data("data-gps-") := "footer.click({ location: 1, link: 29 })", "Teams")
+                a(href := "https://stackoverflow.com/teams", cls := "js-gps-track -link", data("da") := """["teams traffic","footer - site nav","stackoverflow.com/teams",null,{"dimension4":"teams"}]""", data("data-gps-") := "footer.click({ location: 1, link: 29 })", "Teams")
               ), " ", 
               li(cls := "-item", 
                 a(href := "https://www.stackoverflowbusiness.com/talent", cls := "js-gps-track -link", data("data-gps-") := "footer.click({ location: 1, link: 20 })", "Talent")
@@ -4986,12 +4984,12 @@ html(cls := "html__responsive",
                 ), " ", 
                 li(cls := "-item", 
                   a(href := "https://expressionengine.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "administrators, end users, developers and designers for ExpressionEngine® CMS", 
-                    "ExpressionEngine&#174; Answers"
+                    "ExpressionEngine® Answers"
                   )
                 ), " ", 
                 li(cls := "-item", 
                   a(href := "https://pt.stackoverflow.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "programadores profissionais e entusiastas", 
-                    "Stack Overflow em Portugu&#234;s"
+                    "Stack Overflow em Português"
                   )
                 ), " ", 
                 li(cls := "-item", 
@@ -5043,7 +5041,7 @@ html(cls := "html__responsive",
               ul(cls := "-list", " ", 
                 li(cls := "-item", 
                   a(href := "https://es.stackoverflow.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "programadores y profesionales de la informática", 
-                    "Stack Overflow en espa&#241;ol"
+                    "Stack Overflow en español"
                   )
                 ), " ", 
                 li(cls := "-item", 
@@ -5258,20 +5256,18 @@ html(cls := "html__responsive",
             ), " "
           ), " ", 
           p(cls := "mt-auto mb24", 
-            " site design / logo &#169; 2018 Stack Exchange Inc; user contributions licensed under ", 
+            " site design / logo © 2018 Stack Exchange Inc; user contributions licensed under ", 
             a(href := "https://creativecommons.org/licenses/by-sa/3.0/", rel := "license", "cc by-sa 3.0"), " with ", 
             a(href := "https://stackoverflow.blog/2009/06/25/attribution-required/", rel := "license", 
               "attribution required"
             ), ". ", 
-            span(id := "svnrev", 
-              "rev&nbsp;2018.10.2.31795"
-            ), " "
+            span(id := "svnrev", "rev 2018.10.2.31795"), " "
           ), " "
         ), " "
       ), " "
     ), " ", 
     script(
-      "StackExchange.ready(function () { StackExchange.responsiveness.addSwitcher(); })"
+      raw("StackExchange.ready(function () { StackExchange.responsiveness.addSwitcher(); })")
     ), " ", 
     tag("noscript")(" ", 
       div(id := "noscript-warning", 
@@ -5279,7 +5275,7 @@ html(cls := "html__responsive",
       ), " "
     ), " ", 
     script(
-      """ (function(i, s, o, g, r, a, m) {
+      raw(""" (function(i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
             m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
@@ -5316,14 +5312,14 @@ html(cls := "html__responsive",
         qc.async = true;
         qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
         s.parentNode.insertBefore(qc, s);
-        _qevents.push({ qacct: \"p-c1rF4kxgLUzNc\" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
         /**/
         var sc = document.createElement('script');
         sc.async = true;
         sc.src = (ssl ? 'https://sb' : 'http://b') + '.scorecardresearch.com/beacon.js';
         s.parentNode.insertBefore(sc, s);
-        _comscore.push({ c1: \"2\", c2: \"17440561\" });
-    })(); """
+        _comscore.push({ c1: "2", c2: "17440561" });
+    })(); """)
     ), " "
   )
 )

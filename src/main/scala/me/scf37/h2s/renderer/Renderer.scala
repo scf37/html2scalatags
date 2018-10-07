@@ -35,7 +35,7 @@ class Renderer(hl: Highlighter = new TextHighlighter, identLength: Int = 2) {
       val s = if (comment.contains("\n"))
         hl.comment("/*" + Util.replace(comment, "*/", "*\\u002F") + "*/")
       else
-        hl.comment("//" + escapeScalaString(comment))
+        hl.comment("//" + comment)
 
       s
 
@@ -51,11 +51,12 @@ class Renderer(hl: Highlighter = new TextHighlighter, identLength: Int = 2) {
 
       sb.toString()
 
-    case ScalatagsString(name) =>
-      if (name.contains("\n"))
-        hl.text("\"\"\"" + escapeScalaString(name) + "\"\"\"")
-      else
-        hl.text("\"" + escapeScalaString(name) + "\"")
+    case ScalatagsString(name, raw) =>
+      val text = hl.text(toScalaString(name, allowMultiline = true))
+
+      if (raw)
+        hl.function("raw") + leftParen + text + rightParen
+      else text
   }
 
   private def renderSequence(data: Seq[ScalatagsNode], ident: Int, needComma0: Boolean, sb: StringBuilder): Unit = {
@@ -124,11 +125,11 @@ class Renderer(hl: Highlighter = new TextHighlighter, identLength: Int = 2) {
       hl.attr(attr.name)
     } else {
       hl.function("attr") + leftParen +
-      hl.value("\"" + escapeScalaString(attr.name) + "\"") + rightParen
+      hl.value(toScalaString(attr.name, allowMultiline = false)) + rightParen
     }
     attr.value match {
       case None => name
-      case Some(v) => name + hl.punctuation(" := ") + hl.value("\"" + escapeScalaString(v) + "\"")
+      case Some(v) => name + hl.punctuation(" := ") + hl.value(toScalaString(v, allowMultiline = false))
     }
   }
 
@@ -137,12 +138,25 @@ class Renderer(hl: Highlighter = new TextHighlighter, identLength: Int = 2) {
       hl.tag(name)
     } else {
       hl.function("tag") + leftParen +
-      hl.value("\"" + escapeScalaString(name) + "\"") + rightParen
+      hl.value(toScalaString(name, allowMultiline = false)) + rightParen
     }
   }
 
-  private def escapeScalaString(s: String): String = {
+  private def toScalaString(s: String, allowMultiline: Boolean): String = {
+    val hasEol = s.contains("\n")
+
+    if ((hasEol || s.count(_ == '\"') > 2) && (!hasEol || allowMultiline))
+      "\"\"\"" + escapeScalaString(s, true) + "\"\"\""
+    else
+      "\"" + escapeScalaString(s, false) + "\""
+  }
+
+  private def escapeScalaString(s: String, tripleQuote: Boolean): String = {
     val ss = Util.replace(s, "\\", "\\\\")
-    Util.replace(ss, "\"", "\\\"")
+    if (tripleQuote) {
+      Util.replace(ss, "\"\"\"", "\\\"\\\"\\\"")
+    } else {
+      Util.replace(ss, "\"", "\\\"")
+    }
   }
 }

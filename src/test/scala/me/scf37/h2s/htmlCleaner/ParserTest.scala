@@ -58,5 +58,11 @@ class ParserTest extends FreeSpec{
       assert(tags(1).asInstanceOf[TagNode].name == "world")
     }
 
+    "does not trim attribute values" in {
+      val html = """<div class=" a " """
+      val tags = p.parse(html)
+      assert(tags.head.asInstanceOf[TagNode].attributes.head._2 == " a ")
+    }
+
   }
 }

@@ -1,50 +1,16 @@
 package me.scf37.h2s.util
 import java.lang.StringBuilder
 
+import org.htmlcleaner.Utils
+
 object Util {
 
-  // this one is totally incomplete but works for usual cases
-  // optimized for performace
-  def unescapeHtml(s: String): String = {
-    var i = s.indexOf("&")
-    if (i < 0) return s
-    val out = new StringBuilder(s.length)
-    out.append(s, 0, i)
-    var replaced = false
-
-    def tryReplace(ss: String, w: Char): Unit = {
-      if (s.length - i < ss.length) return
-      var j = 0
-      while (j < ss.length) {
-        if (s.charAt(i + j) != ss.charAt(j)) return
-        j += 1
-      }
-      out.append(w)
-      i += ss.length
-      replaced = true
-    }
-
-    while (i < s.length) {
-      tryReplace("&amp;", '&')
-      tryReplace("&lt;", '<')
-      tryReplace("&gt;", '>')
-      tryReplace("&quot;", '"')
-      tryReplace("&#x27;", '\'')
-      tryReplace("&#x2F;", '/')
-      if (!replaced) {
-        val j = s.indexOf('&', i + 1)
-        if (j < 0) {
-          out.append(s, i, s.length)
-          i = s.length
-        } else {
-          out.append(s, i, j)
-          i = j
-        }
-      } else replaced = false
-
-    }
-
-    out.toString
+  // unescapes HTML, return None if HTML can't be fully unescaped
+  def unescapeHtml(s: String): Option[String] = {
+    val ss =  Utils.deserializeEntities(s, false)
+    if (ss.indexOf("&#") < 0)
+      Some(ss)
+    else None
   }
 
   def replace(s: String, what: String, wit: String): String = {

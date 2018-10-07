@@ -97,8 +97,19 @@ body(
   a(href := "/hello&world=forever", "<john & fedor>"), 
   // html should not be unescaped for script and style tags 
   " ", 
-  script("alert(\"&lt;>\") "), " ", 
+  script(raw("alert(\"&lt;>\") ")), " ", 
   tag("style")(
-    "a::after { content: \"&lt;>\";} "
+    raw("a::after { content: \"&lt;>\";} ")
+  ), 
+  // attribute value that starts or ends with spaces 
+  " ", 
+  div(data("da") := " a "), 
+  // weird comment <> &lt;&gt; "' 
+  // smart triplequote 
+  " ", 
+  div(onclick := """foo({"a":"b","c":"d"})""", onchange := "bar(\"hello\")"), " ", 
+  script(raw("alert(\"hello\")")), " ", 
+  script(
+    raw("""alert("hello" + "world")""")
   ), " "
 )

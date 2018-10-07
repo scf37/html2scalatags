@@ -9,7 +9,10 @@ import me.scf37.h2s.util.Util
 
 sealed trait ScalatagsNode
 
-case class ScalatagsString(s: String) extends ScalatagsNode
+case class ScalatagsString(
+  s: String,
+  raw: Boolean
+) extends ScalatagsNode
 case class ScalatagsComment(comment: String) extends ScalatagsNode
 case class ScalatagsAttribute(
   name: String,
@@ -48,7 +51,7 @@ class ScalatagsBuilder(preserveWhitespace: Boolean = true) {
 
       def makeResult(tagNode: Option[TagNode]): (Seq[ScalatagsNode], Option[TagNode]) = {
         if (hadWhitespace && !hadText && preserveWhitespace)
-          (result.result() :+ ScalatagsString(" ")) -> tagNode
+          (result.result() :+ ScalatagsString(" ", raw=false)) -> tagNode
         else
           result.result() -> tagNode
       }
@@ -59,7 +62,7 @@ class ScalatagsBuilder(preserveWhitespace: Boolean = true) {
 
           case n: TextNode =>
             if (ctx.preLevel > 0) {
-              result += ScalatagsString(unescapeHtmlTextIfNeeded(n.text, ctx))
+              result += toScalatagsString(n.text, ctx)
             } else {
               if (n.text.nonEmpty) {
                 hadWhitespace = true
@@ -68,7 +71,7 @@ class ScalatagsBuilder(preserveWhitespace: Boolean = true) {
                 hadText = true
                 val s = if (preserveWhitespace) trimForHtml(n.text) else n.text.trim
 
-                result += ScalatagsString(unescapeHtmlTextIfNeeded(s, ctx))
+                result += toScalatagsString(s, ctx)
               }
             }
 
@@ -96,10 +99,16 @@ class ScalatagsBuilder(preserveWhitespace: Boolean = true) {
     ???
   }
 
-  private def unescapeHtmlTextIfNeeded(s: String, ctx: RenderContext): String = {
-    if (ctx.parentNode != "script" && ctx.parentNode != "style")
-      Util.unescapeHtml(s)
-    else s
+  private def toScalatagsString(s: String, ctx: RenderContext): ScalatagsString = {
+    if (ctx.parentNode == "script" || ctx.parentNode == "style") {
+      return ScalatagsString(s, raw = true)
+    }
+
+    Util.unescapeHtml(s) match {
+      case None => ScalatagsString(s, raw = true)
+      case Some(ss) => ScalatagsString(ss, raw = false)
+    }
+
   }
 
 

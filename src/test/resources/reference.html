@@ -83,4 +83,14 @@
     <!-- html should not be unescaped for script and style tags -->
     <script>alert("&lt;>") </script>
     <style>a::after { content: "&lt;>";} </style>
+
+    <!-- attribute value that starts or ends with spaces -->
+    <div data-my=" a " />
+
+    <!-- weird comment <> &lt;&gt; "' -->
+
+    <!-- smart triplequote -->
+    <div onclick='foo({"a":"b","c":"d"})' onchange='bar("hello")'></div>
+    <script>alert("hello")</script>
+    <script>alert("hello" + "world")</script>
 </body>

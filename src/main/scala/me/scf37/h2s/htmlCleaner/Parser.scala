@@ -20,6 +20,7 @@ import scala.collection.JavaConverters._
   */
 class Parser {
   private val props = new CleanerProperties()
+  props.setTrimAttributeValues(false)
   private val cc = new HtmlCleaner(props)
   private val tagRegex = Pattern.compile("<([\\w\\s]+)[> $]")
 
