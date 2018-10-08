@@ -54,7 +54,7 @@ html(cls := "html__responsive",
           a(href := "#", cls := "left-sidebar-toggle p0 ai-center jc-center js-left-sidebar-toggle", 
             span(cls := "ps-relative")
           ), " ", 
-          a(href := "https://stackoverflow.com", cls := "-logo js-gps-track", data("data-gps-") := "top_nav.click({is_current:true, location:1, destination:8})", " ", 
+          a(href := "https://stackoverflow.com", cls := "-logo js-gps-track", data("gps-track") := "top_nav.click({is_current:true, location:1, destination:8})", " ", 
             span(cls := "-img _glyph", "Stack Overflow"), " "
           ), " "
         ), " ", 
@@ -77,7 +77,7 @@ html(cls := "html__responsive",
             )
           ), " ", 
           li(cls := "-item", " ", 
-            a(href := "/users/1445898/sergey-alaev", cls := "my-profile js-gps-track", data("data-gps-") := "profile_summary.click()", " ", 
+            a(href := "/users/1445898/sergey-alaev", cls := "my-profile js-gps-track", data("gps-track") := "profile_summary.click()", " ", 
               div(cls := "gravatar-wrapper-24", title := "Sergey Alaev", 
                 img(src := "https://www.gravatar.com/avatar/3f668122db3fbbe178051b918ca67de3?s=48&d=identicon&r=PG", alt := "", attr("width") := "24", attr("height") := "24", cls := "-avatar js-avatar-me")
               ), " ", 
@@ -107,21 +107,21 @@ html(cls := "html__responsive",
             ), " "
           ), " ", 
           li(cls := "-item", " ", 
-            a(href := "https://stackexchange.com/users/1554291?tab=reputation", cls := "-link js-achievements-button", title := "Recent achievements: reputation, badges, and privileges earned", data("data-unread-") := "_highlighted-positive", " ", 
+            a(href := "https://stackexchange.com/users/1554291?tab=reputation", cls := "-link js-achievements-button", title := "Recent achievements: reputation, badges, and privileges earned", data("unread-class") := "_highlighted-positive", " ", 
               tag("svg")(aria.hidden := "true", cls := "svg-icon iconAchievements", attr("width") := "18", attr("height") := "18", attr("viewBox") := "0 0 18 18", 
                 tag("path")(attr("d") := "M15 2V1H3v1H0v4c0 1.6 1.4 3 3 3v1c.4 1.5 3 2.6 5 3v2H5s-1 1.5-1 2h10c0-.4-1-2-1-2h-3v-2c2-.4 4.6-1.5 5-3V9c1.6-.2 3-1.4 3-3V2h-3zM3 7c-.5 0-1-.5-1-1V4h1v3zm8.4 2.5L9 8 6.6 9.4l1-2.7L5 5h3l1-2.7L10 5h2.8l-2.3 1.8 1 2.7h-.1zM16 6c0 .5-.5 1-1 1V4h1v2z")
               ), " ", 
               span(cls := "indicator-badge js-unread-count _positive", style := "display: none;"), " "
             ), " "
           ), " ", 
-          li(cls := "-item review-button-item", data("data-remove-") := "2", " ", 
-            a(href := "/review", cls := "-link js-gps-track js-review-button", title := "Review queues - help improve the site", data("data-gps-") := "review_popup.click({ in_danger: false })", " ", 
+          li(cls := "-item review-button-item", data("remove-order") := "2", " ", 
+            a(href := "/review", cls := "-link js-gps-track js-review-button", title := "Review queues - help improve the site", data("gps-track") := "review_popup.click({ in_danger: false })", " ", 
               tag("svg")(aria.hidden := "true", cls := "svg-icon iconReviewQueue", attr("width") := "18", attr("height") := "18", attr("viewBox") := "0 0 18 18", 
                 tag("path")(attr("d") := "M16 7.5l-5 4.97-1.79-1.77a1 1 0 0 0-1.4 0l-2.1 2.1a1 1 0 0 0 0 1.4L8.5 17H2a2 2 0 0 1-2-2V3c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v4.5zM12 7H2v2h10V7zm2-4H2v2h12V3zM2 11v2h3v-2H2zm16-.5l-7 7-4-4L8.5 12l2.5 2.5L16.5 9l1.5 1.5z")
               ), " "
             ), " "
           ), " ", 
-          li(cls := "-item help-button-item", data("data-remove-") := "1", 
+          li(cls := "-item help-button-item", data("remove-order") := "1", 
             a(href := "#", cls := "-link js-help-button", title := "Help Center and other resources", " ", 
               tag("svg")(aria.hidden := "true", cls := "svg-icon iconHelp", attr("width") := "18", attr("height") := "18", attr("viewBox") := "0 0 18 18", 
                 tag("path")(attr("d") := "M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23zM11.77 8a5.8 5.8 0 0 1-1.02.91l-.53.37c-.26.2-.42.43-.5.69a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.03-.66.12-1.21.4-1.66a5.29 5.29 0 0 1 1.43-1.22c.16-.12.28-.25.38-.39a1.34 1.34 0 0 0 .02-1.71c-.24-.31-.51-.46-1.03-.46-.51 0-.8.26-1.02.6-.21.33-.18.73-.18 1.1H5.75c0-1.38.35-2.25 1.1-2.76.52-.35 1.17-.5 1.93-.5 1 0 1.79.18 2.49.71.64.5.98 1.18.98 2.12 0 .57-.2 1.05-.48 1.44z")
@@ -129,7 +129,7 @@ html(cls := "html__responsive",
             )
           ), " ", 
           li(cls := "-item", " ", 
-            a(href := "https://stackexchange.com", cls := "-link js-site-switcher-button js-gps-track", data("data-gps-") := "site_switcher.show", title := "A list of all 174 Stack Exchange sites", " ", 
+            a(href := "https://stackexchange.com", cls := "-link js-site-switcher-button js-gps-track", data("gps-track") := "site_switcher.show", title := "A list of all 174 Stack Exchange sites", " ", 
               tag("svg")(aria.hidden := "true", cls := "svg-icon iconStackExchange", attr("width") := "18", attr("height") := "18", attr("viewBox") := "0 0 18 18", 
                 tag("path")(attr("d") := "M1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 0 0 2-2v-2H1v2zM15 1H3a2 2 0 0 0-2 2v2h16V3a2 2 0 0 0-2-2zM1 6h16v4H1V6z")
               ), " "
@@ -146,22 +146,22 @@ html(cls := "html__responsive",
                 ul(cls := "current-site", " ", 
                   li(cls := "grid", " ", 
                     div(cls := "fl1", " ", 
-                      a(href := "https://stackoverflow.com", cls := "current-site-link site-link js-gps-track grid gs8 gsx", data("da") := "1", data("data-gps-") := "site_switcher.click({ item_type:3 })", " ", 
+                      a(href := "https://stackoverflow.com", cls := "current-site-link site-link js-gps-track grid gs8 gsx", data("id") := "1", data("gps-track") := "site_switcher.click({ item_type:3 })", " ", 
                         div(cls := "favicon favicon-stackoverflow site-icon grid--cell", title := "Stack Overflow"), " ", 
                         span(cls := "grid--cell fl1", " Stack Overflow "), " "
                       ), " "
                     ), " ", 
                     div(cls := "related-links", " ", 
-                      a(href := "https://stackoverflow.com/help", cls := "js-gps-track", data("data-gps-") := "site_switcher.click({ item_type:14 })", "help"), " ", 
-                      a(href := "https://chat.stackoverflow.com", cls := "js-gps-track", data("data-gps-") := "site_switcher.click({ item_type:6 })", "chat"), " ", 
-                      a(href := "https://stackoverflow.com/users/logout", cls := "js-gps-track", data("data-gps-") := "site_switcher.click({ item_type:8 })", "log out"), " "
+                      a(href := "https://stackoverflow.com/help", cls := "js-gps-track", data("gps-track") := "site_switcher.click({ item_type:14 })", "help"), " ", 
+                      a(href := "https://chat.stackoverflow.com", cls := "js-gps-track", data("gps-track") := "site_switcher.click({ item_type:6 })", "chat"), " ", 
+                      a(href := "https://stackoverflow.com/users/logout", cls := "js-gps-track", data("gps-track") := "site_switcher.click({ item_type:8 })", "log out"), " "
                     ), " "
                   ), " ", 
                   li(cls := "related-site grid", " ", 
                     div(cls := "L-shaped-icon-container", " ", 
                       span(cls := "L-shaped-icon"), " "
                     ), " ", 
-                    a(href := "https://meta.stackoverflow.com", cls := "site-link js-gps-track grid gs8 gsx", data("da") := "552", data("data-gps-") := "site.switch({ target_site:552, item_type:3 }),site_switcher.click({ item_type:4 })", " ", 
+                    a(href := "https://meta.stackoverflow.com", cls := "site-link js-gps-track grid gs8 gsx", data("id") := "552", data("gps-track") := "site.switch({ target_site:552, item_type:3 }),site_switcher.click({ item_type:4 })", " ", 
                       div(cls := "favicon favicon-stackoverflowmeta site-icon grid--cell", title := "Meta Stack Overflow"), " ", 
                       span(cls := "grid--cell fl1", 
                         " Meta Stack Overflow "
@@ -180,21 +180,21 @@ html(cls := "html__responsive",
               div(cls := "modal-content", id := "your-communities-section", " ", 
                 ul(cls := "my-sites", " ", 
                   li(" ", 
-                    a(href := "https://stackoverflow.com", cls := "site-link js-gps-track grid gs8 gsx", data("da") := "1", data("data-gps-") := "site.switch({ target_site:1, item_type:3 }),site_switcher.click({ item_type:1 })", " ", 
+                    a(href := "https://stackoverflow.com", cls := "site-link js-gps-track grid gs8 gsx", data("id") := "1", data("gps-track") := "site.switch({ target_site:1, item_type:3 }),site_switcher.click({ item_type:1 })", " ", 
                       div(cls := "favicon favicon-stackoverflow site-icon grid--cell", title := "Stack Overflow"), " ", 
                       span(cls := "grid--cell fl1", " Stack Overflow "), " ", 
                       span(cls := "rep-score grid--cell", "1,389"), " "
                     ), " "
                   ), " ", 
                   li(" ", 
-                    a(href := "https://serverfault.com", cls := "site-link js-gps-track grid gs8 gsx", data("da") := "2", data("data-gps-") := "site.switch({ target_site:2, item_type:3 }),site_switcher.click({ item_type:1 })", " ", 
+                    a(href := "https://serverfault.com", cls := "site-link js-gps-track grid gs8 gsx", data("id") := "2", data("gps-track") := "site.switch({ target_site:2, item_type:3 }),site_switcher.click({ item_type:1 })", " ", 
                       div(cls := "favicon favicon-serverfault site-icon grid--cell", title := "Server Fault"), " ", 
                       span(cls := "grid--cell fl1", " Server Fault "), " ", 
                       span(cls := "rep-score grid--cell", "178"), " "
                     ), " "
                   ), " ", 
                   li(" ", 
-                    a(href := "https://softwareengineering.stackexchange.com", cls := "site-link js-gps-track grid gs8 gsx", data("da") := "131", data("data-gps-") := "site.switch({ target_site:131, item_type:3 }),site_switcher.click({ item_type:1 })", " ", 
+                    a(href := "https://softwareengineering.stackexchange.com", cls := "site-link js-gps-track grid gs8 gsx", data("id") := "131", data("gps-track") := "site.switch({ target_site:131, item_type:3 }),site_switcher.click({ item_type:1 })", " ", 
                       div(cls := "favicon favicon-softwareengineering site-icon grid--cell", title := "Software Engineering"), " ", 
                       span(cls := "grid--cell fl1", 
                         " Software Engineering "
@@ -203,14 +203,14 @@ html(cls := "html__responsive",
                     ), " "
                   ), " ", 
                   li(" ", 
-                    a(href := "https://crypto.stackexchange.com", cls := "site-link js-gps-track grid gs8 gsx", data("da") := "281", data("data-gps-") := "site.switch({ target_site:281, item_type:3 }),site_switcher.click({ item_type:1 })", " ", 
+                    a(href := "https://crypto.stackexchange.com", cls := "site-link js-gps-track grid gs8 gsx", data("id") := "281", data("gps-track") := "site.switch({ target_site:281, item_type:3 }),site_switcher.click({ item_type:1 })", " ", 
                       div(cls := "favicon favicon-crypto site-icon grid--cell", title := "Cryptography"), " ", 
                       span(cls := "grid--cell fl1", " Cryptography "), " ", 
                       span(cls := "rep-score grid--cell", "124"), " "
                     ), " "
                   ), " ", 
                   li(" ", 
-                    a(href := "https://dba.stackexchange.com", cls := "site-link js-gps-track grid gs8 gsx", data("da") := "182", data("data-gps-") := "site.switch({ target_site:182, item_type:3 }),site_switcher.click({ item_type:1 })", " ", 
+                    a(href := "https://dba.stackexchange.com", cls := "site-link js-gps-track grid gs8 gsx", data("id") := "182", data("gps-track") := "site.switch({ target_site:182, item_type:3 }),site_switcher.click({ item_type:1 })", " ", 
                       div(cls := "favicon favicon-dba site-icon grid--cell", title := "Database Administrators"), " ", 
                       span(cls := "grid--cell fl1", 
                         " Database Administrators "
@@ -224,7 +224,7 @@ html(cls := "html__responsive",
                   input(tpe := "hidden", name := "fkey", value := "fdad22724c911a3c3e4f2d81e970fd1e3b3e588d3743d6138d82b63a664967fb", " "), " ", 
                   input(tpe := "submit", id := "pin-site-btn", value := "Add", disabled), " ", 
                   ul(cls := "js-found-sites found-sites"), " ", 
-                  ul(cls := "pinned-site-list sortable", data("data-custom") := "False", " "), " ", 
+                  ul(cls := "pinned-site-list sortable", data("custom-list") := "False", " "), " ", 
                   input(tpe := "submit", value := "Save", id := "save-pinned-sites-btn", disabled), " ", 
                   a(href := "#", id := "reset-pinned-sites", 
                     "reset to default list"
@@ -247,35 +247,35 @@ html(cls := "html__responsive",
               div(cls := "modal-content", " ", 
                 ul(" ", 
                   li(" ", 
-                    a(href := "/tour", cls := "js-gps-track", data("data-gps-") := "help_popup.click({ item_type:1 })", " Tour ", 
+                    a(href := "/tour", cls := "js-gps-track", data("gps-track") := "help_popup.click({ item_type:1 })", " Tour ", 
                       span(cls := "item-summary", 
                         " Start here for a quick overview of the site "
                       ), " "
                     ), " "
                   ), " ", 
                   li(" ", 
-                    a(href := "/help", cls := "js-gps-track", data("data-gps-") := "help_popup.click({ item_type:4 })", " Help Center ", 
+                    a(href := "/help", cls := "js-gps-track", data("gps-track") := "help_popup.click({ item_type:4 })", " Help Center ", 
                       span(cls := "item-summary", 
                         " Detailed answers to any questions you might have "
                       ), " "
                     ), " "
                   ), " ", 
                   li(" ", 
-                    a(href := "https://meta.stackoverflow.com", cls := "js-gps-track", data("data-gps-") := "help_popup.click({ item_type:2 })", " Meta ", 
+                    a(href := "https://meta.stackoverflow.com", cls := "js-gps-track", data("gps-track") := "help_popup.click({ item_type:2 })", " Meta ", 
                       span(cls := "item-summary", 
                         " Discuss the workings and policies of this site "
                       ), " "
                     ), " "
                   ), " ", 
                   li(" ", 
-                    a(href := "https://stackoverflow.com/company/about", cls := "js-gps-track", data("data-gps-") := "help_popup.click({ item_type:6 })", " About Us ", 
+                    a(href := "https://stackoverflow.com/company/about", cls := "js-gps-track", data("gps-track") := "help_popup.click({ item_type:6 })", " About Us ", 
                       span(cls := "item-summary", 
                         " Learn more about Stack Overflow the company "
                       ), " "
                     ), " "
                   ), " ", 
                   li(" ", 
-                    a(href := "https://www.stackoverflowbusiness.com/?ref=topbar_help", cls := "js-gps-track", data("data-gps-") := "help_popup.click({ item_type:7 })", " Business ", 
+                    a(href := "https://www.stackoverflowbusiness.com/?ref=topbar_help", cls := "js-gps-track", data("gps-track") := "help_popup.click({ item_type:7 })", " Business ", 
                       span(cls := "item-summary", 
                         " Learn more about hiring developers or posting ads with us "
                       ), " "
@@ -285,7 +285,7 @@ html(cls := "html__responsive",
               ), " "
             ), " ", 
             div(cls := "topbar-dialog leftnav-dialog js-leftnav-dialog dno", " ", 
-              div(cls := "left-sidebar js-unpinned-left-sidebar", data("data-c") := "left-sidebar", data("data-is-here") := "sm"), " "
+              div(cls := "left-sidebar js-unpinned-left-sidebar", data("can-be") := "left-sidebar", data("is-here-when") := "sm"), " "
             ), " "
           ), " "
         ), " "
@@ -313,20 +313,20 @@ html(cls := "html__responsive",
     StackExchange.scrollPadding.setPaddingTop(50, 10); """)
     ), " ", 
     div(cls := "container", " ", 
-      div(id := "left-sidebar", data("data-is-here") := "md lg", cls := "left-sidebar js-pinned-left-sidebar", " ", 
+      div(id := "left-sidebar", data("is-here-when") := "md lg", cls := "left-sidebar js-pinned-left-sidebar", " ", 
         div(cls := "left-sidebar--sticky-container js-sticky-leftnav", " ", 
           tag("nav")(role := "navigation", " ", 
             ol(cls := "nav-links", " ", 
               li(" ", 
                 li(cls := " youarehere", " ", 
-                  a(href := "/", cls := "pl8 js-gps-track nav-links--link", data("data-gps-") := "top_nav.click({is_current:true, location:1, destination:8})", " Home "), " "
+                  a(href := "/", cls := "pl8 js-gps-track nav-links--link", data("gps-track") := "top_nav.click({is_current:true, location:1, destination:8})", " Home "), " "
                 ), " "
               ), " ", 
               li(" ", 
                 ol(cls := "nav-links", " ", 
                   li(cls := "fs-fine tt-uppercase ml8 mt16 mb4 fc-light", "Public"), " ", 
                   li(" ", 
-                    a(id := "nav-questions", href := "/questions", cls := "pl8 js-gps-track nav-links--link -link__with-icon", data("data-gps-") := "top_nav.click({is_current:false, location:1, destination:1})", " ", 
+                    a(id := "nav-questions", href := "/questions", cls := "pl8 js-gps-track nav-links--link -link__with-icon", data("gps-track") := "top_nav.click({is_current:false, location:1, destination:1})", " ", 
                       tag("svg")(aria.hidden := "true", cls := "svg-icon iconGlobe", attr("width") := "18", attr("height") := "18", attr("viewBox") := "0 0 18 18", 
                         tag("path")(attr("d") := "M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zM8 15.32a6.4 6.4 0 0 1-5.23-7.75L7 11.68v.8c0 .88.12 1.32 1 1.32v1.52zm5.72-2c-.2-.66-1-1.32-1.72-1.32h-1v-2c0-.44-.56-1-1-1H6V7h1c.44 0 1-.56 1-1V5h2c.88 0 1.4-.72 1.4-1.6v-.33a6.4 6.4 0 0 1 2.32 10.24z")
                       ), " ", 
@@ -334,13 +334,13 @@ html(cls := "html__responsive",
                     ), " "
                   ), " ", 
                   li(" ", 
-                    a(id := "nav-tags", href := "/tags", cls := " js-gps-track nav-links--link", data("data-gps-") := "top_nav.click({is_current:false, location:1, destination:2})", " Tags "), " "
+                    a(id := "nav-tags", href := "/tags", cls := " js-gps-track nav-links--link", data("gps-track") := "top_nav.click({is_current:false, location:1, destination:2})", " Tags "), " "
                   ), " ", 
                   li(" ", 
-                    a(id := "nav-users", href := "/users", cls := " js-gps-track nav-links--link", data("data-gps-") := "top_nav.click({is_current:false, location:1, destination:3})", " Users "), " "
+                    a(id := "nav-users", href := "/users", cls := " js-gps-track nav-links--link", data("gps-track") := "top_nav.click({is_current:false, location:1, destination:3})", " Users "), " "
                   ), " ", 
                   li(" ", 
-                    a(id := "nav-jobs", href := "/jobs?med=site-ui&ref=jobs-tab", cls := " js-gps-track nav-links--link", data("data-gps-") := "top_nav.click({is_current:false, location:1, destination:6})", " Jobs "), " "
+                    a(id := "nav-jobs", href := "/jobs?med=site-ui&ref=jobs-tab", cls := " js-gps-track nav-links--link", data("gps-track") := "top_nav.click({is_current:false, location:1, destination:6})", " Jobs "), " "
                   ), " "
                 ), " "
               ), " ", 
@@ -350,7 +350,7 @@ html(cls := "html__responsive",
                     div(cls := "ba bc-black-2 bar-sm p16 grid fd-column ps-relative overflow-hidden", " ", 
                       strong(cls := "grid--cell", "Teams"), " ", 
                       span(cls := "grid--cell mt2 fs-caption fc-medium", "Q&A for work "), " ", 
-                      a(href := "https://stackoverflow.com/teams", cls := "js-gps-track s-btn s-btn__outlined ta-center grid--cell mt12", data("data-gps-") := "teams.create.left-sidenav.click", data("da") := """["teams traffic","left nav cta","stackoverflow.com/teams",null,{"dimension4":"teams"}]""", " Learn More "), " ", 
+                      a(href := "https://stackoverflow.com/teams", cls := "js-gps-track s-btn s-btn__outlined ta-center grid--cell mt12", data("gps-track") := "teams.create.left-sidenav.click", data("ga") := """["teams traffic","left nav cta","stackoverflow.com/teams",null,{"dimension4":"teams"}]""", " Learn More "), " ", 
                       div(cls := "ps-absolute t4 rn6", " ", 
                         tag("svg")(attr("width") := "53", attr("height") := "49", attr("fill") := "none", xmlns := "http://www.w3.org/2000/svg", 
                           tag("path")(attr("d") := "M49 11l.2 31H18.9L9 49v-7H4V8h31", attr("fill") := "#CCEAFF"), 
@@ -382,13 +382,13 @@ html(cls := "html__responsive",
             div(cls := "grid--cell fl1 fs-body3"), " ", 
             div(cls := "grid--cell", " ", 
               div(cls := "grid tabs-filter s-btn-group tt-capitalize", " ", 
-                a(cls := "youarehere is-selected grid--cell s-btn s-btn__muted s-btn__outlined py8 ws-nowrap", href := "?tab=interesting", data("data-nav-") := "", title := "Questions that may be of interest to you based on your history and tag preference", data("data-") := "interesting", data("data-sho") := "", " interesting"), " ", 
-                a(cls := "grid--cell s-btn s-btn__muted s-btn__outlined py8 ws-nowrap", href := "?tab=featured", data("data-nav-") := "", title := "Questions with an active bounty", data("data-") := "featured", data("data-sho") := "B", " ", 
+                a(cls := "youarehere is-selected grid--cell s-btn s-btn__muted s-btn__outlined py8 ws-nowrap", href := "?tab=interesting", data("nav-xhref") := "", title := "Questions that may be of interest to you based on your history and tag preference", data("value") := "interesting", data("shortcut") := "", " interesting"), " ", 
+                a(cls := "grid--cell s-btn s-btn__muted s-btn__outlined py8 ws-nowrap", href := "?tab=featured", data("nav-xhref") := "", title := "Questions with an active bounty", data("value") := "featured", data("shortcut") := "B", " ", 
                   span(cls := "bounty-indicator-tab", "327"), " featured"
                 ), " ", 
-                a(cls := "grid--cell s-btn s-btn__muted s-btn__outlined py8 ws-nowrap", href := "?tab=hot", data("data-nav-") := "", title := "Questions with the most views, answers, and votes over the last few days", data("data-") := "hot", data("data-sho") := "H", " hot"), " ", 
-                a(cls := "grid--cell s-btn s-btn__muted s-btn__outlined py8 ws-nowrap", href := "?tab=week", data("data-nav-") := "", title := "Questions with the most views, answers, and votes this week", data("data-") := "week", data("data-sho") := "W", " week"), " ", 
-                a(cls := "grid--cell s-btn s-btn__muted s-btn__outlined py8 ws-nowrap", href := "?tab=month", data("data-nav-") := "", title := "Questions with the most views, answers, and votes this month", data("data-") := "month", data("data-sho") := "M", " month"), " "
+                a(cls := "grid--cell s-btn s-btn__muted s-btn__outlined py8 ws-nowrap", href := "?tab=hot", data("nav-xhref") := "", title := "Questions with the most views, answers, and votes over the last few days", data("value") := "hot", data("shortcut") := "H", " hot"), " ", 
+                a(cls := "grid--cell s-btn s-btn__muted s-btn__outlined py8 ws-nowrap", href := "?tab=week", data("nav-xhref") := "", title := "Questions with the most views, answers, and votes this week", data("value") := "week", data("shortcut") := "W", " week"), " ", 
+                a(cls := "grid--cell s-btn s-btn__muted s-btn__outlined py8 ws-nowrap", href := "?tab=month", data("nav-xhref") := "", title := "Questions with the most views, answers, and votes this month", data("value") := "month", data("shortcut") := "M", " month"), " "
               ), " "
             ), " "
           ), " ", 
@@ -4420,7 +4420,7 @@ html(cls := "html__responsive",
             ), " "
           ), " ", 
           br(cls := "cbt"), " ", 
-          h2(cls := "bottom-notice", data("dat") := "2", 
+          h2(cls := "bottom-notice", data("loc") := "2", 
             "Looking for more? Browse the ", 
             a(href := "/questions", 
               "complete list of questions"
@@ -4435,18 +4435,18 @@ html(cls := "html__responsive",
           ), " "
         ), " ", 
         div(id := "sidebar", " ", 
-          div(cls := "module community-bulletin", data("data-tr") := "cb=1", " ", 
+          div(cls := "module community-bulletin", data("tracker") := "cb=1", " ", 
             div(cls := "related", " ", 
               div(cls := "bulletin-title", " Featured on Meta "), " ", 
               hr(), " ", 
               div(cls := "spacer", " ", 
                 div(cls := "bulletin-item-type", " ", 
-                  a(href := "https://meta.stackexchange.com/questions/315662/responsive-design-released-for-all-beta-undesigned-sites", cls := "question-hyperlink", data("da") := """["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/315662/responsive-design-released-for-all-beta-undesigned-sites",null,null]""", " ", 
+                  a(href := "https://meta.stackexchange.com/questions/315662/responsive-design-released-for-all-beta-undesigned-sites", cls := "question-hyperlink", data("ga") := """["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/315662/responsive-design-released-for-all-beta-undesigned-sites",null,null]""", " ", 
                     div(cls := "favicon favicon-stackexchangemeta", title := "Meta Stack Exchange"), " "
                   ), " "
                 ), " ", 
                 div(cls := "bulletin-item-content", " ", 
-                  a(href := "https://meta.stackexchange.com/questions/315662/responsive-design-released-for-all-beta-undesigned-sites", cls := "question-hyperlink", data("da") := """["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/315662/responsive-design-released-for-all-beta-undesigned-sites",null,null]""", 
+                  a(href := "https://meta.stackexchange.com/questions/315662/responsive-design-released-for-all-beta-undesigned-sites", cls := "question-hyperlink", data("ga") := """["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/315662/responsive-design-released-for-all-beta-undesigned-sites",null,null]""", 
                     "Responsive design released for all Beta & Undesigned sites"
                   ), " "
                 ), " ", 
@@ -4454,12 +4454,12 @@ html(cls := "html__responsive",
               ), " ", 
               div(cls := "spacer", " ", 
                 div(cls := "bulletin-item-type", " ", 
-                  a(href := "https://meta.stackoverflow.com/questions/373920/vsts-has-been-renamed-to-azure-devops-lets-talk-about-some-tags", cls := "question-hyperlink", data("da") := """["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/373920/vsts-has-been-renamed-to-azure-devops-lets-talk-about-some-tags",null,null]""", " ", 
+                  a(href := "https://meta.stackoverflow.com/questions/373920/vsts-has-been-renamed-to-azure-devops-lets-talk-about-some-tags", cls := "question-hyperlink", data("ga") := """["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/373920/vsts-has-been-renamed-to-azure-devops-lets-talk-about-some-tags",null,null]""", " ", 
                     div(cls := "favicon favicon-stackoverflowmeta", title := "Meta Stack Overflow"), " "
                   ), " "
                 ), " ", 
                 div(cls := "bulletin-item-content", " ", 
-                  a(href := "https://meta.stackoverflow.com/questions/373920/vsts-has-been-renamed-to-azure-devops-lets-talk-about-some-tags", cls := "question-hyperlink", data("da") := """["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/373920/vsts-has-been-renamed-to-azure-devops-lets-talk-about-some-tags",null,null]""", 
+                  a(href := "https://meta.stackoverflow.com/questions/373920/vsts-has-been-renamed-to-azure-devops-lets-talk-about-some-tags", cls := "question-hyperlink", data("ga") := """["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/373920/vsts-has-been-renamed-to-azure-devops-lets-talk-about-some-tags",null,null]""", 
                     "VSTS has been renamed to Azure DevOps - let's talk about some tags"
                   ), " "
                 ), " ", 
@@ -4467,12 +4467,12 @@ html(cls := "html__responsive",
               ), " ", 
               div(cls := "spacer", " ", 
                 div(cls := "bulletin-item-type", " ", 
-                  a(href := "https://meta.stackoverflow.com/questions/374198/the-deep-tag-is-being-burned", cls := "question-hyperlink", data("da") := """["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/374198/the-deep-tag-is-being-burned",null,null]""", " ", 
+                  a(href := "https://meta.stackoverflow.com/questions/374198/the-deep-tag-is-being-burned", cls := "question-hyperlink", data("ga") := """["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/374198/the-deep-tag-is-being-burned",null,null]""", " ", 
                     div(cls := "favicon favicon-stackoverflowmeta", title := "Meta Stack Overflow"), " "
                   ), " "
                 ), " ", 
                 div(cls := "bulletin-item-content", " ", 
-                  a(href := "https://meta.stackoverflow.com/questions/374198/the-deep-tag-is-being-burned", cls := "question-hyperlink", data("da") := """["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/374198/the-deep-tag-is-being-burned",null,null]""", 
+                  a(href := "https://meta.stackoverflow.com/questions/374198/the-deep-tag-is-being-burned", cls := "question-hyperlink", data("ga") := """["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/374198/the-deep-tag-is-being-burned",null,null]""", 
                     "The [deep] tag is being burned"
                   ), " "
                 ), " ", 
@@ -4480,12 +4480,12 @@ html(cls := "html__responsive",
               ), " ", 
               div(cls := "spacer", " ", 
                 div(cls := "bulletin-item-type", " ", 
-                  a(href := "https://meta.stackoverflow.com/questions/374617/happy-10th-anniversary-stack-overflow-commence-au-festival", cls := "question-hyperlink", data("da") := """["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/374617/happy-10th-anniversary-stack-overflow-commence-au-festival",null,null]""", " ", 
+                  a(href := "https://meta.stackoverflow.com/questions/374617/happy-10th-anniversary-stack-overflow-commence-au-festival", cls := "question-hyperlink", data("ga") := """["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/374617/happy-10th-anniversary-stack-overflow-commence-au-festival",null,null]""", " ", 
                     div(cls := "favicon favicon-stackoverflowmeta", title := "Meta Stack Overflow"), " "
                   ), " "
                 ), " ", 
                 div(cls := "bulletin-item-content", " ", 
-                  a(href := "https://meta.stackoverflow.com/questions/374617/happy-10th-anniversary-stack-overflow-commence-au-festival", cls := "question-hyperlink", data("da") := """["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/374617/happy-10th-anniversary-stack-overflow-commence-au-festival",null,null]""", 
+                  a(href := "https://meta.stackoverflow.com/questions/374617/happy-10th-anniversary-stack-overflow-commence-au-festival", cls := "question-hyperlink", data("ga") := """["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/374617/happy-10th-anniversary-stack-overflow-commence-au-festival",null,null]""", 
                     "Happy 10th anniversary Stack Overflow! Commence … au festival!"
                   ), " "
                 ), " ", 
@@ -4498,7 +4498,7 @@ html(cls := "html__responsive",
                   span(title := "Vote score (upvotes - downvotes)", "14"), " "
                 ), " ", 
                 div(cls := "bulletin-item-content", " ", 
-                  a(href := "https://meta.stackoverflow.com/questions/374746/flag-declined-on-a-question-re-reviewers-that-accepted-a-bad-imo-edit", cls := "question-hyperlink", data("da") := """["community bulletin board","Hot Meta Posts","https://meta.stackoverflow.com/questions/374746/flag-declined-on-a-question-re-reviewers-that-accepted-a-bad-imo-edit",null,null]""", 
+                  a(href := "https://meta.stackoverflow.com/questions/374746/flag-declined-on-a-question-re-reviewers-that-accepted-a-bad-imo-edit", cls := "question-hyperlink", data("ga") := """["community bulletin board","Hot Meta Posts","https://meta.stackoverflow.com/questions/374746/flag-declined-on-a-question-re-reviewers-that-accepted-a-bad-imo-edit",null,null]""", 
                     "Flag declined on a question re: reviewers that accepted a bad (IMO) edit"
                   ), " "
                 ), " ", 
@@ -4605,157 +4605,157 @@ html(cls := "html__responsive",
           ), 
           div(id := "hot-network-questions", cls := "module tex2jax_ignore", " ", 
             h4(" ", 
-              a(href := "https://stackexchange.com/questions?tab=hot", cls := "js-gps-track s-link s-link__inherit", data("data-gps-") := "posts_hot_network.click({ item_type:1, location:8 })", 
+              a(href := "https://stackexchange.com/questions?tab=hot", cls := "js-gps-track s-link s-link__inherit", data("gps-track") := "posts_hot_network.click({ item_type:1, location:8 })", 
                 " Hot Network Questions "
               ), " "
             ), " ", 
             ul(" ", 
               li(" ", 
                 div(cls := "favicon favicon-photo", title := "Photography Stack Exchange"), 
-                a(href := "https://photo.stackexchange.com/questions/101844/how-can-i-get-the-horizon-and-the-lighthouse-both-level-in-my-photo", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:61 }); posts_hot_network.click({ item_type:2, location:8 })", 
+                a(href := "https://photo.stackexchange.com/questions/101844/how-can-i-get-the-horizon-and-the-lighthouse-both-level-in-my-photo", cls := "js-gps-track question-hyperlink mb0", data("gps-track") := "site.switch({ item_type:8, target_site:61 }); posts_hot_network.click({ item_type:2, location:8 })", 
                   " How can I get the horizon and the lighthouse both level in my photo? "
                 ), " "
               ), " ", 
               li(" ", 
                 div(cls := "favicon favicon-travel", title := "Travel Stack Exchange"), 
-                a(href := "https://travel.stackexchange.com/questions/123253/traveling-europe-from-us-on-valid-schengen-visa-and-expired-us-visa", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:273 }); posts_hot_network.click({ item_type:2, location:8 })", 
+                a(href := "https://travel.stackexchange.com/questions/123253/traveling-europe-from-us-on-valid-schengen-visa-and-expired-us-visa", cls := "js-gps-track question-hyperlink mb0", data("gps-track") := "site.switch({ item_type:8, target_site:273 }); posts_hot_network.click({ item_type:2, location:8 })", 
                   " Traveling Europe from US on valid Schengen visa and expired US visa "
                 ), " "
               ), " ", 
               li(" ", 
                 div(cls := "favicon favicon-superuser", title := "Super User"), 
-                a(href := "https://superuser.com/questions/1362964/when-doubling-internet-connection-speed-will-my-effective-in-house-bandwidth-al", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:3 }); posts_hot_network.click({ item_type:2, location:8 })", 
+                a(href := "https://superuser.com/questions/1362964/when-doubling-internet-connection-speed-will-my-effective-in-house-bandwidth-al", cls := "js-gps-track question-hyperlink mb0", data("gps-track") := "site.switch({ item_type:8, target_site:3 }); posts_hot_network.click({ item_type:2, location:8 })", 
                   " When doubling Internet connection speed, will my effective in-house bandwidth also double? "
                 ), " "
               ), " ", 
               li(" ", 
                 div(cls := "favicon favicon-apple", title := "Ask Different"), 
-                a(href := "https://apple.stackexchange.com/questions/338257/what-does-a-dmg-verify", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:118 }); posts_hot_network.click({ item_type:2, location:8 })", 
+                a(href := "https://apple.stackexchange.com/questions/338257/what-does-a-dmg-verify", cls := "js-gps-track question-hyperlink mb0", data("gps-track") := "site.switch({ item_type:8, target_site:118 }); posts_hot_network.click({ item_type:2, location:8 })", 
                   " What does a .dmg verify? "
                 ), " "
               ), " ", 
               li(" ", 
                 div(cls := "favicon favicon-math", title := "Mathematics Stack Exchange"), 
-                a(href := "https://math.stackexchange.com/questions/2940216/question-about-the-chain-rule", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:69 }); posts_hot_network.click({ item_type:2, location:8 })", 
+                a(href := "https://math.stackexchange.com/questions/2940216/question-about-the-chain-rule", cls := "js-gps-track question-hyperlink mb0", data("gps-track") := "site.switch({ item_type:8, target_site:69 }); posts_hot_network.click({ item_type:2, location:8 })", 
                   " Question about the chain rule. "
                 ), " "
               ), " ", 
               li(" ", 
                 div(cls := "favicon favicon-workplace", title := "The Workplace Stack Exchange"), 
-                a(href := "https://workplace.stackexchange.com/questions/119816/top-developer-doing-more-home-office-than-allowed", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:423 }); posts_hot_network.click({ item_type:2, location:8 })", 
+                a(href := "https://workplace.stackexchange.com/questions/119816/top-developer-doing-more-home-office-than-allowed", cls := "js-gps-track question-hyperlink mb0", data("gps-track") := "site.switch({ item_type:8, target_site:423 }); posts_hot_network.click({ item_type:2, location:8 })", 
                   " Top developer doing more home office than allowed "
                 ), " "
               ), " ", 
               li(" ", 
                 div(cls := "favicon favicon-scifi", title := "Science Fiction & Fantasy Stack Exchange"), 
-                a(href := "https://scifi.stackexchange.com/questions/195901/in-star-trek-v-why-was-the-klingon-bird-of-prey-hanging-close-to-earth", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:186 }); posts_hot_network.click({ item_type:2, location:8 })", 
+                a(href := "https://scifi.stackexchange.com/questions/195901/in-star-trek-v-why-was-the-klingon-bird-of-prey-hanging-close-to-earth", cls := "js-gps-track question-hyperlink mb0", data("gps-track") := "site.switch({ item_type:8, target_site:186 }); posts_hot_network.click({ item_type:2, location:8 })", 
                   " In Star Trek V, why was the Klingon Bird-Of-Prey hanging close to Earth? "
                 ), " "
               ), " ", 
               li(" ", 
                 div(cls := "favicon favicon-retrocomputing", title := "Retrocomputing Stack Exchange"), 
-                a(href := "https://retrocomputing.stackexchange.com/questions/7810/why-not-use-fractions-instead-of-floating-point", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:648 }); posts_hot_network.click({ item_type:2, location:8 })", 
+                a(href := "https://retrocomputing.stackexchange.com/questions/7810/why-not-use-fractions-instead-of-floating-point", cls := "js-gps-track question-hyperlink mb0", data("gps-track") := "site.switch({ item_type:8, target_site:648 }); posts_hot_network.click({ item_type:2, location:8 })", 
                   " Why not use fractions instead of floating point? "
                 ), " "
               ), " ", 
               li(" ", 
                 div(cls := "favicon favicon-aviation", title := "Aviation Stack Exchange"), 
-                a(href := "https://aviation.stackexchange.com/questions/55473/why-dont-jetliners-maneuver-to-avoid-a-bird-strike-if-spotted-in-time", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:528 }); posts_hot_network.click({ item_type:2, location:8 })", 
+                a(href := "https://aviation.stackexchange.com/questions/55473/why-dont-jetliners-maneuver-to-avoid-a-bird-strike-if-spotted-in-time", cls := "js-gps-track question-hyperlink mb0", data("gps-track") := "site.switch({ item_type:8, target_site:528 }); posts_hot_network.click({ item_type:2, location:8 })", 
                   " Why don't jetliners maneuver to avoid a bird strike if spotted in time? "
                 ), " "
               ), " ", 
               li(" ", 
                 div(cls := "favicon favicon-dba", title := "Database Administrators Stack Exchange"), 
-                a(href := "https://dba.stackexchange.com/questions/219149/is-using-multiple-unique-constrains-on-a-single-table-considered-bad-design", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:182 }); posts_hot_network.click({ item_type:2, location:8 })", 
+                a(href := "https://dba.stackexchange.com/questions/219149/is-using-multiple-unique-constrains-on-a-single-table-considered-bad-design", cls := "js-gps-track question-hyperlink mb0", data("gps-track") := "site.switch({ item_type:8, target_site:182 }); posts_hot_network.click({ item_type:2, location:8 })", 
                   " Is using multiple unique constrains on a single table considered bad design? "
                 ), " "
               ), " ", 
               li(" ", 
                 div(cls := "favicon favicon-electronics", title := "Electrical Engineering Stack Exchange"), 
-                a(href := "https://electronics.stackexchange.com/questions/399020/led-not-achieving-max-current", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:135 }); posts_hot_network.click({ item_type:2, location:8 })", 
+                a(href := "https://electronics.stackexchange.com/questions/399020/led-not-achieving-max-current", cls := "js-gps-track question-hyperlink mb0", data("gps-track") := "site.switch({ item_type:8, target_site:135 }); posts_hot_network.click({ item_type:2, location:8 })", 
                   " LED not achieving max current "
                 ), " "
               ), " ", 
               li(" ", 
                 div(cls := "favicon favicon-stackoverflow", title := "Stack Overflow"), 
-                a(href := "https://stackoverflow.com/questions/52607611/why-does-for-loop-behave-differently-when-migrating-vb-net-code-to-c", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:1 }); posts_hot_network.click({ item_type:2, location:8 })", 
+                a(href := "https://stackoverflow.com/questions/52607611/why-does-for-loop-behave-differently-when-migrating-vb-net-code-to-c", cls := "js-gps-track question-hyperlink mb0", data("gps-track") := "site.switch({ item_type:8, target_site:1 }); posts_hot_network.click({ item_type:2, location:8 })", 
                   " Why does for loop behave differently when migrating VB.NET code to C#? "
                 ), " "
               ), " ", 
               li(cls := "dno js-hidden", " ", 
                 div(cls := "favicon favicon-rpg", title := "Role-playing Games Stack Exchange"), 
-                a(href := "https://rpg.stackexchange.com/questions/132870/how-to-conceal-being-a-vampire-in-a-party-of-clerics-and-paladins", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:122 }); posts_hot_network.click({ item_type:2, location:8 })", 
+                a(href := "https://rpg.stackexchange.com/questions/132870/how-to-conceal-being-a-vampire-in-a-party-of-clerics-and-paladins", cls := "js-gps-track question-hyperlink mb0", data("gps-track") := "site.switch({ item_type:8, target_site:122 }); posts_hot_network.click({ item_type:2, location:8 })", 
                   " How to conceal being a vampire in a party of Clerics and Paladins "
                 ), " "
               ), " ", 
               li(cls := "dno js-hidden", " ", 
                 div(cls := "favicon favicon-retrocomputing", title := "Retrocomputing Stack Exchange"), 
-                a(href := "https://retrocomputing.stackexchange.com/questions/7817/who-set-the-640k-limit", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:648 }); posts_hot_network.click({ item_type:2, location:8 })", 
+                a(href := "https://retrocomputing.stackexchange.com/questions/7817/who-set-the-640k-limit", cls := "js-gps-track question-hyperlink mb0", data("gps-track") := "site.switch({ item_type:8, target_site:648 }); posts_hot_network.click({ item_type:2, location:8 })", 
                   " Who set the 640K limit? "
                 ), " "
               ), " ", 
               li(cls := "dno js-hidden", " ", 
                 div(cls := "favicon favicon-codegolf", title := "Programming Puzzles & Code Golf Stack Exchange"), 
-                a(href := "https://codegolf.stackexchange.com/questions/173104/the-work-day-countdown", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:200 }); posts_hot_network.click({ item_type:2, location:8 })", 
+                a(href := "https://codegolf.stackexchange.com/questions/173104/the-work-day-countdown", cls := "js-gps-track question-hyperlink mb0", data("gps-track") := "site.switch({ item_type:8, target_site:200 }); posts_hot_network.click({ item_type:2, location:8 })", 
                   " The Work Day Countdown "
                 ), " "
               ), " ", 
               li(cls := "dno js-hidden", " ", 
                 div(cls := "favicon favicon-tex", title := "TeX - LaTeX Stack Exchange"), 
-                a(href := "https://tex.stackexchange.com/questions/453572/mismatched-braces-in-subscript-and-superscript", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:85 }); posts_hot_network.click({ item_type:2, location:8 })", 
+                a(href := "https://tex.stackexchange.com/questions/453572/mismatched-braces-in-subscript-and-superscript", cls := "js-gps-track question-hyperlink mb0", data("gps-track") := "site.switch({ item_type:8, target_site:85 }); posts_hot_network.click({ item_type:2, location:8 })", 
                   " Mismatched braces in subscript and superscript "
                 ), " "
               ), " ", 
               li(cls := "dno js-hidden", " ", 
                 div(cls := "favicon favicon-emacs", title := "Emacs Stack Exchange"), 
-                a(href := "https://emacs.stackexchange.com/questions/45129/encoding-issue-for-french-text", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:583 }); posts_hot_network.click({ item_type:2, location:8 })", 
+                a(href := "https://emacs.stackexchange.com/questions/45129/encoding-issue-for-french-text", cls := "js-gps-track question-hyperlink mb0", data("gps-track") := "site.switch({ item_type:8, target_site:583 }); posts_hot_network.click({ item_type:2, location:8 })", 
                   " Encoding issue for French text "
                 ), " "
               ), " ", 
               li(cls := "dno js-hidden", " ", 
                 div(cls := "favicon favicon-workplace", title := "The Workplace Stack Exchange"), 
-                a(href := "https://workplace.stackexchange.com/questions/120096/young-colleague-wants-to-resign-i-would-like-him-to-stay", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:423 }); posts_hot_network.click({ item_type:2, location:8 })", 
+                a(href := "https://workplace.stackexchange.com/questions/120096/young-colleague-wants-to-resign-i-would-like-him-to-stay", cls := "js-gps-track question-hyperlink mb0", data("gps-track") := "site.switch({ item_type:8, target_site:423 }); posts_hot_network.click({ item_type:2, location:8 })", 
                   " Young colleague wants to resign; I would like him to stay "
                 ), " "
               ), " ", 
               li(cls := "dno js-hidden", " ", 
                 div(cls := "favicon favicon-academia", title := "Academia Stack Exchange"), 
-                a(href := "https://academia.stackexchange.com/questions/117799/just-starting-in-grad-school-i-havent-heard-from-my-advisor-in-three-weeks", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:415 }); posts_hot_network.click({ item_type:2, location:8 })", 
+                a(href := "https://academia.stackexchange.com/questions/117799/just-starting-in-grad-school-i-havent-heard-from-my-advisor-in-three-weeks", cls := "js-gps-track question-hyperlink mb0", data("gps-track") := "site.switch({ item_type:8, target_site:415 }); posts_hot_network.click({ item_type:2, location:8 })", 
                   " Just starting in grad school, I haven't heard from my advisor in three weeks … "
                 ), " "
               ), " ", 
               li(cls := "dno js-hidden", " ", 
                 div(cls := "favicon favicon-physics", title := "Physics Stack Exchange"), 
-                a(href := "https://physics.stackexchange.com/questions/431861/if-an-apple-is-magnified-to-the-size-of-the-earth-then-the-atoms-in-the-apple-a", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:151 }); posts_hot_network.click({ item_type:2, location:8 })", 
+                a(href := "https://physics.stackexchange.com/questions/431861/if-an-apple-is-magnified-to-the-size-of-the-earth-then-the-atoms-in-the-apple-a", cls := "js-gps-track question-hyperlink mb0", data("gps-track") := "site.switch({ item_type:8, target_site:151 }); posts_hot_network.click({ item_type:2, location:8 })", 
                   " If an apple is magnified to the size of the earth, then the atoms in the apple are approximately the size of the original apple "
                 ), " "
               ), " ", 
               li(cls := "dno js-hidden", " ", 
                 div(cls := "favicon favicon-money", title := "Personal Finance & Money Stack Exchange"), 
-                a(href := "https://money.stackexchange.com/questions/100649/how-far-in-advance-can-insider-sell-their-own-companys-stock", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:93 }); posts_hot_network.click({ item_type:2, location:8 })", 
+                a(href := "https://money.stackexchange.com/questions/100649/how-far-in-advance-can-insider-sell-their-own-companys-stock", cls := "js-gps-track question-hyperlink mb0", data("gps-track") := "site.switch({ item_type:8, target_site:93 }); posts_hot_network.click({ item_type:2, location:8 })", 
                   " How far in advance can insider sell their own company's stock? "
                 ), " "
               ), " ", 
               li(cls := "dno js-hidden", " ", 
                 div(cls := "favicon favicon-rpg", title := "Role-playing Games Stack Exchange"), 
-                a(href := "https://rpg.stackexchange.com/questions/132771/what-to-do-about-the-npc-massacre", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:122 }); posts_hot_network.click({ item_type:2, location:8 })", 
+                a(href := "https://rpg.stackexchange.com/questions/132771/what-to-do-about-the-npc-massacre", cls := "js-gps-track question-hyperlink mb0", data("gps-track") := "site.switch({ item_type:8, target_site:122 }); posts_hot_network.click({ item_type:2, location:8 })", 
                   " What to do about the NPC massacre? "
                 ), " "
               ), " ", 
               li(cls := "dno js-hidden", " ", 
                 div(cls := "favicon favicon-physics", title := "Physics Stack Exchange"), 
-                a(href := "https://physics.stackexchange.com/questions/432126/can-a-black-coating-increase-the-efficiency-of-a-heat-dissipator", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:151 }); posts_hot_network.click({ item_type:2, location:8 })", 
+                a(href := "https://physics.stackexchange.com/questions/432126/can-a-black-coating-increase-the-efficiency-of-a-heat-dissipator", cls := "js-gps-track question-hyperlink mb0", data("gps-track") := "site.switch({ item_type:8, target_site:151 }); posts_hot_network.click({ item_type:2, location:8 })", 
                   " Can a black coating increase the efficiency of a heat dissipator? "
                 ), " "
               ), " ", 
               li(cls := "dno js-hidden", " ", 
                 div(cls := "favicon favicon-cooking", title := "Seasoned Advice"), 
-                a(href := "https://cooking.stackexchange.com/questions/92570/is-it-possible-to-remove-the-smell-from-rice-mistakenly-stored-in-a-detergent-bo", cls := "js-gps-track question-hyperlink mb0", data("data-gps-") := "site.switch({ item_type:8, target_site:49 }); posts_hot_network.click({ item_type:2, location:8 })", 
+                a(href := "https://cooking.stackexchange.com/questions/92570/is-it-possible-to-remove-the-smell-from-rice-mistakenly-stored-in-a-detergent-bo", cls := "js-gps-track question-hyperlink mb0", data("gps-track") := "site.switch({ item_type:8, target_site:49 }); posts_hot_network.click({ item_type:2, location:8 })", 
                   " Is it possible to remove the smell from rice mistakenly stored in a detergent box? "
                 ), " "
               ), " "
             ), " ", 
-            a(href := "#", cls := "show-more js-show-more js-gps-track", data("data-gps-") := "posts_hot_network.click({ item_type:3, location:8 })", 
+            a(href := "#", cls := "show-more js-show-more js-gps-track", data("gps-track") := "posts_hot_network.click({ item_type:3, location:8 })", 
               " more hot questions "
             ), " "
           ), " ", 
@@ -4783,74 +4783,74 @@ html(cls := "html__responsive",
           ), " "
         ), " ", 
         tag("nav")(cls := "site-footer--nav", " ", 
-          div(cls := "site-footer--col site-footer--col__visible js-footer-col", data("data") := "default", " ", 
+          div(cls := "site-footer--col site-footer--col__visible js-footer-col", data("name") := "default", " ", 
             h5(cls := "-title", 
-              a(href := "https://stackoverflow.com", cls := "js-gps-track", data("data-gps-") := "footer.click({ location: 1, link: 15})", "Stack Overflow")
+              a(href := "https://stackoverflow.com", cls := "js-gps-track", data("gps-track") := "footer.click({ location: 1, link: 15})", "Stack Overflow")
             ), " ", 
             ul(cls := "-list js-primary-footer-links", " ", 
               li(cls := "-item", 
-                a(href := "/questions", cls := "js-gps-track -link", data("data-gps-") := "footer.click({ location: 1, link: 16})", "Questions")
+                a(href := "/questions", cls := "js-gps-track -link", data("gps-track") := "footer.click({ location: 1, link: 16})", "Questions")
               ), " ", 
               li(cls := "-item", 
-                a(href := "https://stackoverflow.com/jobs", cls := "js-gps-track -link", data("data-gps-") := "footer.click({ location: 1, link: 17})", "Jobs")
+                a(href := "https://stackoverflow.com/jobs", cls := "js-gps-track -link", data("gps-track") := "footer.click({ location: 1, link: 17})", "Jobs")
               ), " ", 
               li(cls := "-item", 
-                a(href := "https://stackoverflow.com/jobs/directory/developer-jobs", cls := "js-gps-track -link", data("data-gps-") := "footer.click({ location: 1, link: 11})", 
+                a(href := "https://stackoverflow.com/jobs/directory/developer-jobs", cls := "js-gps-track -link", data("gps-track") := "footer.click({ location: 1, link: 11})", 
                   "Developer Jobs Directory"
                 )
               ), " ", 
               li(cls := "-item", 
-                a(href := "https://stackoverflow.com/jobs/salary", cls := "js-gps-track -link", data("data-gps-") := "footer.click({ location: 1, link: 28})", "Salary Calculator")
+                a(href := "https://stackoverflow.com/jobs/salary", cls := "js-gps-track -link", data("gps-track") := "footer.click({ location: 1, link: 28})", "Salary Calculator")
               ), " ", 
               li(cls := "-item", 
-                a(href := "/help", cls := "js-gps-track -link", data("data-gps-") := "footer.click({ location: 1, link: 3 })", "Help")
+                a(href := "/help", cls := "js-gps-track -link", data("gps-track") := "footer.click({ location: 1, link: 3 })", "Help")
               ), " ", 
               li(cls := "-item", 
-                a(onclick := "StackExchange.switchMobile(\"on\")", cls := "js-gps-track -link", data("data-gps-") := "footer.click({ location: 1, link: 12 })", "Mobile")
+                a(onclick := "StackExchange.switchMobile(\"on\")", cls := "js-gps-track -link", data("gps-track") := "footer.click({ location: 1, link: 12 })", "Mobile")
               ), " "
             ), " "
           ), " ", 
-          div(cls := "site-footer--col site-footer--col__visible js-footer-col", data("data") := "default", " ", 
+          div(cls := "site-footer--col site-footer--col__visible js-footer-col", data("name") := "default", " ", 
             h5(cls := "-title", 
-              a(href := "https://www.stackoverflowbusiness.com", cls := "js-gps-track", data("data-gps-") := "footer.click({ location: 1, link: 19 })", "Products")
+              a(href := "https://www.stackoverflowbusiness.com", cls := "js-gps-track", data("gps-track") := "footer.click({ location: 1, link: 19 })", "Products")
             ), " ", 
             ul(cls := "-list", " ", 
               li(cls := "-item", 
-                a(href := "https://stackoverflow.com/teams", cls := "js-gps-track -link", data("da") := """["teams traffic","footer - site nav","stackoverflow.com/teams",null,{"dimension4":"teams"}]""", data("data-gps-") := "footer.click({ location: 1, link: 29 })", "Teams")
+                a(href := "https://stackoverflow.com/teams", cls := "js-gps-track -link", data("ga") := """["teams traffic","footer - site nav","stackoverflow.com/teams",null,{"dimension4":"teams"}]""", data("gps-track") := "footer.click({ location: 1, link: 29 })", "Teams")
               ), " ", 
               li(cls := "-item", 
-                a(href := "https://www.stackoverflowbusiness.com/talent", cls := "js-gps-track -link", data("data-gps-") := "footer.click({ location: 1, link: 20 })", "Talent")
+                a(href := "https://www.stackoverflowbusiness.com/talent", cls := "js-gps-track -link", data("gps-track") := "footer.click({ location: 1, link: 20 })", "Talent")
               ), " ", 
               li(cls := "-item", 
-                a(href := "https://www.stackoverflowbusiness.com/advertise", cls := "js-gps-track -link", data("data-gps-") := "footer.click({ location: 1, link: 21 })", "Engagement")
+                a(href := "https://www.stackoverflowbusiness.com/advertise", cls := "js-gps-track -link", data("gps-track") := "footer.click({ location: 1, link: 21 })", "Engagement")
               ), " ", 
               li(cls := "-item", 
-                a(href := "https://stackoverflow.com/enterprise", cls := "js-gps-track -link", data("data-gps-") := "footer.click({ location: 1, link: 22 })", "Enterprise")
+                a(href := "https://stackoverflow.com/enterprise", cls := "js-gps-track -link", data("gps-track") := "footer.click({ location: 1, link: 22 })", "Enterprise")
               ), " "
             ), " "
           ), " ", 
-          div(cls := "site-footer--col site-footer--col__visible js-footer-col", data("data") := "default", " ", 
+          div(cls := "site-footer--col site-footer--col__visible js-footer-col", data("name") := "default", " ", 
             h5(cls := "-title", 
-              a(cls := "js-gps-track", data("data-gps-") := "footer.click({ location: 1, link: 1 })", href := "https://stackoverflow.com/company/about", "Company")
+              a(cls := "js-gps-track", data("gps-track") := "footer.click({ location: 1, link: 1 })", href := "https://stackoverflow.com/company/about", "Company")
             ), " ", 
             ul(cls := "-list", " ", 
               li(cls := "-item", 
-                a(cls := "js-gps-track -link", data("data-gps-") := "footer.click({ location: 1, link: 1 })", href := "https://stackoverflow.com/company/about", "About")
+                a(cls := "js-gps-track -link", data("gps-track") := "footer.click({ location: 1, link: 1 })", href := "https://stackoverflow.com/company/about", "About")
               ), " ", 
               li(cls := "-item", 
-                a(cls := "js-gps-track -link", data("data-gps-") := "footer.click({ location: 1, link: 27 })", href := "https://stackoverflow.com/company/press", "Press")
+                a(cls := "js-gps-track -link", data("gps-track") := "footer.click({ location: 1, link: 27 })", href := "https://stackoverflow.com/company/press", "Press")
               ), " ", 
               li(cls := "-item", 
-                a(cls := "js-gps-track -link", data("data-gps-") := "footer.click({ location: 1, link: 9 })", href := "https://stackoverflow.com/company/work-here", "Work Here")
+                a(cls := "js-gps-track -link", data("gps-track") := "footer.click({ location: 1, link: 9 })", href := "https://stackoverflow.com/company/work-here", "Work Here")
               ), " ", 
               li(cls := "-item", 
-                a(cls := "js-gps-track -link", data("data-gps-") := "footer.click({ location: 1, link: 7 })", href := "https://stackoverflow.com/legal", "Legal")
+                a(cls := "js-gps-track -link", data("gps-track") := "footer.click({ location: 1, link: 7 })", href := "https://stackoverflow.com/legal", "Legal")
               ), " ", 
               li(cls := "-item", 
-                a(cls := "js-gps-track -link", data("data-gps-") := "footer.click({ location: 1, link: 8 })", href := "https://stackoverflow.com/legal/privacy-policy", "Privacy Policy")
+                a(cls := "js-gps-track -link", data("gps-track") := "footer.click({ location: 1, link: 8 })", href := "https://stackoverflow.com/legal/privacy-policy", "Privacy Policy")
               ), " ", 
               li(cls := "-item", 
-                a(cls := "js-gps-track -link", data("data-gps-") := "footer.click({ location: 1, link: 13 })", href := "https://stackoverflow.com/company/contact", "Contact Us")
+                a(cls := "js-gps-track -link", data("gps-track") := "footer.click({ location: 1, link: 13 })", href := "https://stackoverflow.com/company/contact", "Contact Us")
               ), " "
             ), " "
           ), " ", 
@@ -4868,373 +4868,373 @@ html(cls := "html__responsive",
               ), " ", 
               ul(cls := "-list", " ", 
                 li(cls := "-item", 
-                  a(href := "#", cls := "-link _expandable js-footer-category-trigger js-gps-track", data("data-gps-") := "footer.click({ location: 1, link: 24 })", data("data-t") := "Technology", "Technology")
+                  a(href := "#", cls := "-link _expandable js-footer-category-trigger js-gps-track", data("gps-track") := "footer.click({ location: 1, link: 24 })", data("target") := "Technology", "Technology")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "#", cls := "-link _expandable js-footer-category-trigger js-gps-track", data("data-gps-") := "footer.click({ location: 1, link: 24 })", data("data-t") := "Life / Arts", "Life / Arts")
+                  a(href := "#", cls := "-link _expandable js-footer-category-trigger js-gps-track", data("gps-track") := "footer.click({ location: 1, link: 24 })", data("target") := "Life / Arts", "Life / Arts")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "#", cls := "-link _expandable js-footer-category-trigger js-gps-track", data("data-gps-") := "footer.click({ location: 1, link: 24 })", data("data-t") := "Culture / Recreation", 
+                  a(href := "#", cls := "-link _expandable js-footer-category-trigger js-gps-track", data("gps-track") := "footer.click({ location: 1, link: 24 })", data("target") := "Culture / Recreation", 
                     "Culture / Recreation"
                   )
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "#", cls := "-link _expandable js-footer-category-trigger js-gps-track", data("data-gps-") := "footer.click({ location: 1, link: 24 })", data("data-t") := "Science", "Science")
+                  a(href := "#", cls := "-link _expandable js-footer-category-trigger js-gps-track", data("gps-track") := "footer.click({ location: 1, link: 24 })", data("target") := "Science", "Science")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "#", cls := "-link _expandable js-footer-category-trigger js-gps-track", data("data-gps-") := "footer.click({ location: 1, link: 24 })", data("data-t") := "Other", "Other")
+                  a(href := "#", cls := "-link _expandable js-footer-category-trigger js-gps-track", data("gps-track") := "footer.click({ location: 1, link: 24 })", data("target") := "Other", "Other")
                 ), " "
               ), " "
             ), " "
           ), " ", 
           div(cls := "site-footer--categories", " ", 
-            div(cls := "site-footer--col site-footer--category js-footer-col", data("data") := "Technology", " ", 
+            div(cls := "site-footer--col site-footer--category js-footer-col", data("name") := "Technology", " ", 
               ul(cls := "-list", " ", 
                 li(cls := "-item", 
-                  a(href := "https://stackoverflow.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "professional and enthusiast programmers", "Stack Overflow")
+                  a(href := "https://stackoverflow.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "professional and enthusiast programmers", "Stack Overflow")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://serverfault.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "system and network administrators", "Server Fault")
+                  a(href := "https://serverfault.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "system and network administrators", "Server Fault")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://superuser.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "computer enthusiasts and power users", "Super User")
+                  a(href := "https://superuser.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "computer enthusiasts and power users", "Super User")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://webapps.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "power users of web applications", "Web Applications")
+                  a(href := "https://webapps.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "power users of web applications", "Web Applications")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://askubuntu.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "Ubuntu users and developers", "Ask Ubuntu")
+                  a(href := "https://askubuntu.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "Ubuntu users and developers", "Ask Ubuntu")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://webmasters.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "pro webmasters", "Webmasters")
+                  a(href := "https://webmasters.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "pro webmasters", "Webmasters")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://gamedev.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "professional and independent game developers", "Game Development")
+                  a(href := "https://gamedev.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "professional and independent game developers", "Game Development")
                 ), " "
               )
             ), 
-            div(cls := "site-footer--col site-footer--category js-footer-col", data("data") := "Technology", 
+            div(cls := "site-footer--col site-footer--category js-footer-col", data("name") := "Technology", 
               ul(cls := "-list", " ", 
                 li(cls := "-item", 
-                  a(href := "https://tex.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "users of TeX, LaTeX, ConTeXt, and related typesetting systems", "TeX - LaTeX")
+                  a(href := "https://tex.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "users of TeX, LaTeX, ConTeXt, and related typesetting systems", "TeX - LaTeX")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://softwareengineering.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "professionals, academics, and students working within the systems development life cycle", 
+                  a(href := "https://softwareengineering.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "professionals, academics, and students working within the systems development life cycle", 
                     "Software Engineering"
                   )
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://unix.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "users of Linux, FreeBSD and other Un*x-like operating systems", "Unix & Linux")
+                  a(href := "https://unix.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "users of Linux, FreeBSD and other Un*x-like operating systems", "Unix & Linux")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://apple.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "power users of Apple hardware and software", 
+                  a(href := "https://apple.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "power users of Apple hardware and software", 
                     "Ask Different (Apple)"
                   )
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://wordpress.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "WordPress developers and administrators", 
+                  a(href := "https://wordpress.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "WordPress developers and administrators", 
                     "WordPress Development"
                   )
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://gis.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "cartographers, geographers and GIS professionals", 
+                  a(href := "https://gis.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "cartographers, geographers and GIS professionals", 
                     "Geographic Information Systems"
                   )
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://electronics.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "electronics and electrical engineering professionals, students, and enthusiasts", 
+                  a(href := "https://electronics.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "electronics and electrical engineering professionals, students, and enthusiasts", 
                     "Electrical Engineering"
                   )
                 ), " "
               )
             ), 
-            div(cls := "site-footer--col site-footer--category js-footer-col", data("data") := "Technology", 
+            div(cls := "site-footer--col site-footer--category js-footer-col", data("name") := "Technology", 
               ul(cls := "-list", " ", 
                 li(cls := "-item", 
-                  a(href := "https://android.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "enthusiasts and power users of the Android operating system", "Android Enthusiasts")
+                  a(href := "https://android.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "enthusiasts and power users of the Android operating system", "Android Enthusiasts")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://security.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "information security professionals", 
+                  a(href := "https://security.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "information security professionals", 
                     "Information Security"
                   )
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://dba.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "database professionals who wish to improve their database skills and learn from others in the community", 
+                  a(href := "https://dba.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "database professionals who wish to improve their database skills and learn from others in the community", 
                     "Database Administrators"
                   )
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://drupal.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "Drupal developers and administrators", "Drupal Answers")
+                  a(href := "https://drupal.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "Drupal developers and administrators", "Drupal Answers")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://sharepoint.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "SharePoint enthusiasts", "SharePoint")
+                  a(href := "https://sharepoint.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "SharePoint enthusiasts", "SharePoint")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://ux.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "user experience researchers and experts", "User Experience")
+                  a(href := "https://ux.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "user experience researchers and experts", "User Experience")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://mathematica.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "users of Wolfram Mathematica", "Mathematica")
+                  a(href := "https://mathematica.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "users of Wolfram Mathematica", "Mathematica")
                 ), " "
               )
             ), 
-            div(cls := "site-footer--col site-footer--category js-footer-col", data("data") := "Technology", 
+            div(cls := "site-footer--col site-footer--category js-footer-col", data("name") := "Technology", 
               ul(cls := "-list", " ", 
                 li(cls := "-item", 
-                  a(href := "https://salesforce.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "Salesforce administrators, implementation experts, developers and anybody in-between", "Salesforce")
+                  a(href := "https://salesforce.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "Salesforce administrators, implementation experts, developers and anybody in-between", "Salesforce")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://expressionengine.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "administrators, end users, developers and designers for ExpressionEngine® CMS", 
+                  a(href := "https://expressionengine.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "administrators, end users, developers and designers for ExpressionEngine® CMS", 
                     "ExpressionEngine® Answers"
                   )
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://pt.stackoverflow.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "programadores profissionais e entusiastas", 
+                  a(href := "https://pt.stackoverflow.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "programadores profissionais e entusiastas", 
                     "Stack Overflow em Português"
                   )
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://blender.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "people who use Blender to create 3D graphics, animations, or games", "Blender")
+                  a(href := "https://blender.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "people who use Blender to create 3D graphics, animations, or games", "Blender")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://networkengineering.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "network engineers", "Network Engineering")
+                  a(href := "https://networkengineering.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "network engineers", "Network Engineering")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://crypto.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "software developers, mathematicians and others interested in cryptography", "Cryptography")
+                  a(href := "https://crypto.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "software developers, mathematicians and others interested in cryptography", "Cryptography")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://codereview.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "peer programmer code reviews", "Code Review")
+                  a(href := "https://codereview.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "peer programmer code reviews", "Code Review")
                 ), " "
               )
             ), 
-            div(cls := "site-footer--col site-footer--category js-footer-col", data("data") := "Technology", 
+            div(cls := "site-footer--col site-footer--category js-footer-col", data("name") := "Technology", 
               ul(cls := "-list", " ", 
                 li(cls := "-item", 
-                  a(href := "https://magento.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "users of the Magento e-Commerce platform", "Magento")
+                  a(href := "https://magento.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "users of the Magento e-Commerce platform", "Magento")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://softwarerecs.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "people seeking specific software recommendations", 
+                  a(href := "https://softwarerecs.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "people seeking specific software recommendations", 
                     "Software Recommendations"
                   )
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://dsp.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "practitioners of the art and science of signal, image and video processing", "Signal Processing")
+                  a(href := "https://dsp.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "practitioners of the art and science of signal, image and video processing", "Signal Processing")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://emacs.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "those using, extending or developing Emacs", "Emacs")
+                  a(href := "https://emacs.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "those using, extending or developing Emacs", "Emacs")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://raspberrypi.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "users and developers of hardware and software for Raspberry Pi", "Raspberry Pi")
+                  a(href := "https://raspberrypi.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "users and developers of hardware and software for Raspberry Pi", "Raspberry Pi")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://ru.stackoverflow.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "программистов", 
+                  a(href := "https://ru.stackoverflow.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "программистов", 
                     "Stack Overflow на русском"
                   )
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://codegolf.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "programming puzzle enthusiasts and code golfers", 
+                  a(href := "https://codegolf.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "programming puzzle enthusiasts and code golfers", 
                     "Programming Puzzles & Code Golf"
                   )
                 ), " "
               )
             ), 
-            div(cls := "site-footer--col site-footer--category js-footer-col", data("data") := "Technology", 
+            div(cls := "site-footer--col site-footer--category js-footer-col", data("name") := "Technology", 
               ul(cls := "-list", " ", 
                 li(cls := "-item", 
-                  a(href := "https://es.stackoverflow.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "programadores y profesionales de la informática", 
+                  a(href := "https://es.stackoverflow.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "programadores y profesionales de la informática", 
                     "Stack Overflow en español"
                   )
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://ethereum.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "users of Ethereum, the decentralized application platform and smart contract enabled blockchain", "Ethereum")
+                  a(href := "https://ethereum.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "users of Ethereum, the decentralized application platform and smart contract enabled blockchain", "Ethereum")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://datascience.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "Data science professionals, Machine Learning specialists, and those interested in learning more about the field", "Data Science")
+                  a(href := "https://datascience.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "Data science professionals, Machine Learning specialists, and those interested in learning more about the field", "Data Science")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://arduino.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "developers of open-source hardware and software that is compatible with Arduino", "Arduino")
+                  a(href := "https://arduino.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "developers of open-source hardware and software that is compatible with Arduino", "Arduino")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://bitcoin.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "Bitcoin crypto-currency enthusiasts", "Bitcoin")
+                  a(href := "https://bitcoin.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "Bitcoin crypto-currency enthusiasts", "Bitcoin")
                 ), " ", 
                 li(cls := "-item", " ", 
-                  a(href := "https://stackexchange.com/sites#technology", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 26 })", " ", 
+                  a(href := "https://stackexchange.com/sites#technology", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 26 })", " ", 
                     strong(" more (30) "), " "
                   ), " "
                 ), " "
               ), " "
             ), " ", 
-            div(cls := "site-footer--col site-footer--category js-footer-col", data("data") := "Life / Arts", " ", 
+            div(cls := "site-footer--col site-footer--category js-footer-col", data("name") := "Life / Arts", " ", 
               ul(cls := "-list", " ", 
                 li(cls := "-item", 
-                  a(href := "https://photo.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "professional, enthusiast and amateur photographers", "Photography")
+                  a(href := "https://photo.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "professional, enthusiast and amateur photographers", "Photography")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://scifi.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "science fiction and fantasy enthusiasts", 
+                  a(href := "https://scifi.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "science fiction and fantasy enthusiasts", 
                     "Science Fiction & Fantasy"
                   )
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://graphicdesign.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "Graphic Design professionals, students, and enthusiasts", "Graphic Design")
+                  a(href := "https://graphicdesign.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "Graphic Design professionals, students, and enthusiasts", "Graphic Design")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://movies.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "movie and tv enthusiasts", "Movies & TV")
+                  a(href := "https://movies.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "movie and tv enthusiasts", "Movies & TV")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://music.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "musicians, students, and enthusiasts", 
+                  a(href := "https://music.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "musicians, students, and enthusiasts", 
                     "Music: Practice & Theory"
                   )
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://worldbuilding.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "writers/artists using science, geography and culture to construct imaginary worlds and settings", "Worldbuilding")
+                  a(href := "https://worldbuilding.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "writers/artists using science, geography and culture to construct imaginary worlds and settings", "Worldbuilding")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://cooking.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "professional and amateur chefs", 
+                  a(href := "https://cooking.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "professional and amateur chefs", 
                     "Seasoned Advice (cooking)"
                   )
                 ), " "
               )
             ), 
-            div(cls := "site-footer--col site-footer--category js-footer-col", data("data") := "Life / Arts", 
+            div(cls := "site-footer--col site-footer--category js-footer-col", data("name") := "Life / Arts", 
               ul(cls := "-list", " ", 
                 li(cls := "-item", 
-                  a(href := "https://diy.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "contractors and serious DIYers", "Home Improvement")
+                  a(href := "https://diy.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "contractors and serious DIYers", "Home Improvement")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://money.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "people who want to be financially literate", 
+                  a(href := "https://money.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "people who want to be financially literate", 
                     "Personal Finance & Money"
                   )
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://academia.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "academics and those enrolled in higher education", "Academia")
+                  a(href := "https://academia.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "academics and those enrolled in higher education", "Academia")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://law.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "legal professionals, students, and others with experience or interest in law", "Law")
+                  a(href := "https://law.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "legal professionals, students, and others with experience or interest in law", "Law")
                 ), " ", 
                 li(cls := "-item", " ", 
-                  a(href := "https://stackexchange.com/sites#lifearts", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 26 })", " ", 
+                  a(href := "https://stackexchange.com/sites#lifearts", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 26 })", " ", 
                     strong(" more (15) "), " "
                   ), " "
                 ), " "
               ), " "
             ), " ", 
-            div(cls := "site-footer--col site-footer--category js-footer-col", data("data") := "Culture / Recreation", " ", 
+            div(cls := "site-footer--col site-footer--category js-footer-col", data("name") := "Culture / Recreation", " ", 
               ul(cls := "-list", " ", 
                 li(cls := "-item", 
-                  a(href := "https://english.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "linguists, etymologists, and serious English language enthusiasts", 
+                  a(href := "https://english.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "linguists, etymologists, and serious English language enthusiasts", 
                     "English Language & Usage"
                   )
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://skeptics.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "scientific skepticism", "Skeptics")
+                  a(href := "https://skeptics.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "scientific skepticism", "Skeptics")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://judaism.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "those who base their lives on Jewish law and tradition and anyone interested in learning more", "Mi Yodeya (Judaism)")
+                  a(href := "https://judaism.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "those who base their lives on Jewish law and tradition and anyone interested in learning more", "Mi Yodeya (Judaism)")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://travel.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "road warriors and seasoned travelers", "Travel")
+                  a(href := "https://travel.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "road warriors and seasoned travelers", "Travel")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://christianity.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "committed Christians, experts in Christianity and those interested in learning more", "Christianity")
+                  a(href := "https://christianity.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "committed Christians, experts in Christianity and those interested in learning more", "Christianity")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://ell.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "speakers of other languages learning English", 
+                  a(href := "https://ell.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "speakers of other languages learning English", 
                     "English Language Learners"
                   )
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://japanese.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "students, teachers, and linguists wanting to discuss the finer points of the Japanese language", "Japanese Language")
+                  a(href := "https://japanese.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "students, teachers, and linguists wanting to discuss the finer points of the Japanese language", "Japanese Language")
                 ), " "
               )
             ), 
-            div(cls := "site-footer--col site-footer--category js-footer-col", data("data") := "Culture / Recreation", 
+            div(cls := "site-footer--col site-footer--category js-footer-col", data("name") := "Culture / Recreation", 
               ul(cls := "-list", " ", 
                 li(cls := "-item", 
-                  a(href := "https://gaming.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "passionate videogamers on all platforms", "Arqade (gaming)")
+                  a(href := "https://gaming.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "passionate videogamers on all platforms", "Arqade (gaming)")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://bicycles.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "people who build and repair bicycles, people who train cycling, or commute on bicycles", "Bicycles")
+                  a(href := "https://bicycles.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "people who build and repair bicycles, people who train cycling, or commute on bicycles", "Bicycles")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://rpg.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "gamemasters and players of tabletop, paper-and-pencil role-playing games", "Role-playing Games")
+                  a(href := "https://rpg.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "gamemasters and players of tabletop, paper-and-pencil role-playing games", "Role-playing Games")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://anime.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "anime and manga fans", "Anime & Manga")
+                  a(href := "https://anime.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "anime and manga fans", "Anime & Manga")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://puzzling.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "those who create, solve, and study puzzles", "Puzzling")
+                  a(href := "https://puzzling.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "those who create, solve, and study puzzles", "Puzzling")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://mechanics.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "mechanics and DIY enthusiast owners of cars, trucks, and motorcycles", 
+                  a(href := "https://mechanics.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "mechanics and DIY enthusiast owners of cars, trucks, and motorcycles", 
                     "Motor Vehicle Maintenance & Repair"
                   )
                 ), " ", 
                 li(cls := "-item", " ", 
-                  a(href := "https://stackexchange.com/sites#culturerecreation", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 26 })", " ", 
+                  a(href := "https://stackexchange.com/sites#culturerecreation", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 26 })", " ", 
                     strong(" more (33) "), " "
                   ), " "
                 ), " "
               ), " "
             ), " ", 
-            div(cls := "site-footer--col site-footer--category js-footer-col", data("data") := "Science", " ", 
+            div(cls := "site-footer--col site-footer--category js-footer-col", data("name") := "Science", " ", 
               ul(cls := "-list", " ", 
                 li(cls := "-item", 
-                  a(href := "https://mathoverflow.net", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "professional mathematicians", "MathOverflow")
+                  a(href := "https://mathoverflow.net", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "professional mathematicians", "MathOverflow")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://math.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "people studying math at any level and professionals in related fields", "Mathematics")
+                  a(href := "https://math.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "people studying math at any level and professionals in related fields", "Mathematics")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://stats.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "people interested in statistics, machine learning, data analysis, data mining, and data visualization", 
+                  a(href := "https://stats.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "people interested in statistics, machine learning, data analysis, data mining, and data visualization", 
                     "Cross Validated (stats)"
                   )
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://cstheory.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "theoretical computer scientists and researchers in related fields", 
+                  a(href := "https://cstheory.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "theoretical computer scientists and researchers in related fields", 
                     "Theoretical Computer Science"
                   )
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://physics.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "active researchers, academics and students of physics", "Physics")
+                  a(href := "https://physics.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "active researchers, academics and students of physics", "Physics")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://chemistry.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "scientists, academics, teachers, and students in the field of chemistry", "Chemistry")
+                  a(href := "https://chemistry.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "scientists, academics, teachers, and students in the field of chemistry", "Chemistry")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://biology.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "biology researchers, academics, and students", "Biology")
+                  a(href := "https://biology.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "biology researchers, academics, and students", "Biology")
                 ), " "
               )
             ), 
-            div(cls := "site-footer--col site-footer--category js-footer-col", data("data") := "Science", 
+            div(cls := "site-footer--col site-footer--category js-footer-col", data("name") := "Science", 
               ul(cls := "-list", " ", 
                 li(cls := "-item", 
-                  a(href := "https://cs.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "students, researchers and practitioners of computer science", "Computer Science")
+                  a(href := "https://cs.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "students, researchers and practitioners of computer science", "Computer Science")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://philosophy.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "those interested in the study of the fundamental nature of knowledge, reality, and existence", "Philosophy")
+                  a(href := "https://philosophy.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "those interested in the study of the fundamental nature of knowledge, reality, and existence", "Philosophy")
                 ), " ", 
                 li(cls := "-item", " ", 
-                  a(href := "https://stackexchange.com/sites#science", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 26 })", " ", 
+                  a(href := "https://stackexchange.com/sites#science", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 26 })", " ", 
                     strong(" more (10) "), " "
                   ), " "
                 ), " "
               ), " "
             ), " ", 
-            div(cls := "site-footer--col site-footer--category js-footer-col", data("data") := "Other", " ", 
+            div(cls := "site-footer--col site-footer--category js-footer-col", data("name") := "Other", " ", 
               ul(cls := "-list", " ", 
                 li(cls := "-item", 
-                  a(href := "https://meta.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "meta-discussion of the Stack Exchange family of Q&A websites", "Meta Stack Exchange")
+                  a(href := "https://meta.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "meta-discussion of the Stack Exchange family of Q&A websites", "Meta Stack Exchange")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://stackapps.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "apps, scripts, and development with the Stack Exchange API", "Stack Apps")
+                  a(href := "https://stackapps.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "apps, scripts, and development with the Stack Exchange API", "Stack Apps")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://api.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "programmatic interaction with Stack Exchange sites", "API")
+                  a(href := "https://api.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "programmatic interaction with Stack Exchange sites", "API")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://data.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "querying Stack Exchange data using SQL", "Data")
+                  a(href := "https://data.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "querying Stack Exchange data using SQL", "Data")
                 ), " ", 
                 li(cls := "-item", 
-                  a(href := "https://area51.stackexchange.com", cls := "-link js-gps-track", data("data-gps-") := "footer.click({ location: 2, link: 25 })", title := "proposing new sites in the Stack Exchange network", "Area 51")
+                  a(href := "https://area51.stackexchange.com", cls := "-link js-gps-track", data("gps-track") := "footer.click({ location: 2, link: 25 })", title := "proposing new sites in the Stack Exchange network", "Area 51")
                 ), " "
               ), " "
             ), " "
@@ -5243,7 +5243,7 @@ html(cls := "html__responsive",
         div(cls := "site-footer--copyright fs-fine", " ", 
           ul(cls := "-list", " ", 
             li(cls := "-item", 
-              a(cls := "js-gps-track -link", data("data-gps-") := "footer.click({ location: 1, link:4 })", href := "https://stackoverflow.blog?blb=1", "Blog")
+              a(cls := "js-gps-track -link", data("gps-track") := "footer.click({ location: 1, link:4 })", href := "https://stackoverflow.blog?blb=1", "Blog")
             ), " ", 
             li(cls := "-item", 
               a(href := "https://www.facebook.com/officialstackoverflow/", cls := "-link", "Facebook")

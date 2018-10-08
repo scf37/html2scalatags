@@ -126,7 +126,7 @@ class ScalatagsBuilder(preserveWhitespace: Boolean = true) {
     val attributes: Vector[ScalatagsAttribute] = node.attributes.map { case (name, value) =>
       if (name.toLowerCase.startsWith("data-"))
         ScalatagsAttribute(
-          name = name.dropRight("data-".length),
+          name = name.drop("data-".length),
           value = Some(value),
           supported = false,
           dataAttribute = true

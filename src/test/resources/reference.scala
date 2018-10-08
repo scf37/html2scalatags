@@ -7,11 +7,11 @@ body(
   tag("hello")(attr("world") := "forever"), 
   // div with no nested elements - must be single-line 
   " ", 
-  div(cls := "clazz", data("data") := "dataattr", aria.label := "arialabel", disabled), 
+  div(cls := "clazz", data("test") := "dataattr", aria.label := "arialabel", disabled), 
   // case insensitivity 
   " ", 
   tag("hello")(attr("world") := "Forever", " "), " ", 
-  div(cls := "clazz", data("data") := "DataAttr", aria.label := "AriaLabel", disabled), 
+  div(cls := "clazz", data("test") := "DataAttr", aria.label := "AriaLabel", disabled), 
   // short text in div 
   " ", 
   div("12"), 
@@ -103,7 +103,7 @@ body(
   ), 
   // attribute value that starts or ends with spaces 
   " ", 
-  div(data("da") := " a "), 
+  div(data("my") := " a "), 
   // weird comment <> &lt;&gt; "' 
   // smart triplequote 
   " ", 
